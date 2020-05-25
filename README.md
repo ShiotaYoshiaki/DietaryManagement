@@ -16,6 +16,10 @@
 git clone git@github.com:ShiotaYoshiaki/DietaryManagement.git
 ```
 
+## スマホアプリ
+
+* 「expo」というアプリをインストール
+
 ## 前提となるパッケージ
 
 * node.js
