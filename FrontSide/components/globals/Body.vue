@@ -1,15 +1,16 @@
 <template>
   <view class="container">
-    <Body />
+    <text class="text-color-primary">div Vue Native App</text>
+    <Footer />
   </view>
 </template>
 
 <script>
-import Body from "./components/globals/Body.vue";
+import Footer from "./Footer";
 
 export default {
-  components: { Body }
-};
+  components: { Footer }
+}
 </script>
 
 <style>

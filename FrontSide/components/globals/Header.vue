@@ -1,16 +1,8 @@
 <template>
   <view class="container">
-    <Body />
+    <text class="text-color-primary">div Vue Native App</text>
   </view>
 </template>
-
-<script>
-import Body from "./components/globals/Body.vue";
-
-export default {
-  components: { Body }
-};
-</script>
 
 <style>
 .container {
