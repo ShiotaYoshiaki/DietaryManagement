@@ -37,7 +37,9 @@ npm i -g expo-cli create-react-native-app vue-native-cli
   * ls をターミナルに入力してpackage.jsonが参照できればOK
 * 初回のみパッケージのインストール
   * npm i
-
+* システム起動
+  * npm run start
+  * 
 
 
 
