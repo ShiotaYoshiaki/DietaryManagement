@@ -5,23 +5,11 @@
 <script>
 import {
   createAppContainer,
-  createBottomTabNavigator,
   createStackNavigator,
 } from "vue-native-router";
-import DetailsScreen from "./components/screens/DetailsScreen.vue";
-import SettingsScreen from "./components/screens/SettingsScreen.vue";
+import * as Stack from "./routes/Stack";
 
-const BottomTabNavigator = createBottomTabNavigator({
-  Home: DetailsScreen,
-  Record: SettingsScreen,
-  Nutrients: DetailsScreen,
-  Settings: SettingsScreen,
-});
-
-const StackNavigator = createStackNavigator({
-  Home: BottomTabNavigator,
-});
-
+const StackNavigator = createStackNavigator(Stack.default);
 const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
