@@ -1,26 +1,20 @@
 <template>
-  <view class="container">
-    <text class="text-color-primary">div Vue Native App</text>
-    <Footer />
-  </view>
+  <app-navigation></app-navigation>
 </template>
-
 <script>
-import Footer from "./Footer";
-
+import { createStackNavigator } from "vue-native-router";
+import HomeScreen from "../screens/HomeScreen.vue";
+import MessagesScreen from "../screens/MessagesScreen.vue";
+const AppNavigation = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Messages: MessagesScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
 export default {
-  components: { Footer }
+    components: { AppNavigation }
 }
 </script>
-
-<style>
-.container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.text-color-primary {
-  color: blue;
-}
-</style>
