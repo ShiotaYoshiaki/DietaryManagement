@@ -1,25 +1,29 @@
 <template>
-  <view class="container">
-    <Body />
-  </view>
+  <app-navigator></app-navigator>
 </template>
 
 <script>
-import Body from "./components/globals/Body.vue";
+import {
+  createAppContainer,
+  createStackNavigator,
+} from "vue-native-router";
+import HomeScreen from "./components/screens/HomeScreen.vue";
+import MessagesScreen from "./components/screens/MessagesScreen.vue";11
+
+
+const StackNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Messages: MessagesScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
-  components: { Body }
-};
+    components: { AppNavigator }
+}
 </script>
-
-<style>
-.container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.text-color-primary {
-  color: blue;
-}
-</style>
