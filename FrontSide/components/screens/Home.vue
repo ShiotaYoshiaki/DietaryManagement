@@ -1,7 +1,7 @@
 <template>
   <view class="container">
-    <text class="heading">Details</text>
-    <text>This is the App Details screen</text>
+    <text class="heading">Home</text>
+    <text>This is the App Home screen</text>
   </view>
 </template>
 
