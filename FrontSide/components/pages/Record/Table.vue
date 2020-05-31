@@ -7,7 +7,22 @@
         </view>
       </view>
       <view class="l_content">
-        <text>test</text>
+        <view class="l_recipi_button">
+          <view class="c_recipi_button" v-for="recipi in recipis" :key="recipi.key">
+            <button :title="recipi.message" />
+          </view>
+        </view>
+        <view>
+          <view class="c_recipi_label">
+            <text>朝食の献立</text>
+          </view>
+          <view class="c_recipi_history" v-for="record in testRecord" :key="record.key">
+            <text>{{record.message}}</text>
+          </view>
+          <view>
+            <text>マイ自炊セットに登録</text>
+          </view>
+        </view>
       </view>
     </view>
   </view>
@@ -15,11 +30,14 @@
 
 <script>
 import { MEALS } from "../../../constants/meals";
+import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
 
 export default {
   data: () => {
     return {
-      cokked: MEALS
+      cokked: MEALS,
+      recipis: INPUT_RECIPE,
+      testRecord: EMPTY_RECIPE
     };
   }
 };
@@ -48,11 +66,31 @@ export default {
 }
 
 .l_content {
-  background-color: lightcoral;
   border-color: #000;
   border-style: solid;
   border-width: 1px;
   width: 100%;
+  flex-direction: row;
   /* height: 100; */
+}
+
+.l_recipi_button {
+  width: 200;
+}
+
+.c_recipi_button {
+  margin-bottom: 20;
+}
+
+.c_recipi_label {
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.c_recipi_history {
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
 }
 </style>
