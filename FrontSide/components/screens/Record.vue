@@ -2,8 +2,17 @@
   <view class="container">
     <text class="heading">Record</text>
     <text>This is the App Record screen</text>
+    <Table />
   </view>
 </template>
+
+<script>
+import Table from "../pages/Record/Table";
+
+export default {
+  components: { Table },
+};
+</script>
 
 <style>
 .container {
