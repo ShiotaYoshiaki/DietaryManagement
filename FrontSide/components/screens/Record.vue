@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Table from "../pages/Record";
+import Table from "../pages/Record/Table";
 
 export default {
   components: { Table },
