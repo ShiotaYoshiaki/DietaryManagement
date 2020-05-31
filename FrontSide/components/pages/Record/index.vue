@@ -1,16 +1,10 @@
 <template>
-  <view class="container">
+  <view>
     <text class="text-color-primary">Food Index</text>
   </view>
 </template>
 
 <style>
-.container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
 .text-color-primary {
   color: blue;
 }
