@@ -7,23 +7,12 @@ import {
   createAppContainer,
   createStackNavigator,
 } from "vue-native-router";
-import HomeScreen from "./components/screens/HomeScreen.vue";
-import MessagesScreen from "./components/screens/MessagesScreen.vue";11
+import * as Stack from "./routes/Stack";
 
-
-const StackNavigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Messages: MessagesScreen,
-  },
-  {
-    initialRouteName: 'Home',
-  }
-);
-
+const StackNavigator = createStackNavigator(Stack.default);
 const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
-    components: { AppNavigator }
-}
+  components: { AppNavigator },
+};
 </script>
