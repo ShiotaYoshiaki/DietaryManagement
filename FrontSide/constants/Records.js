@@ -12,11 +12,11 @@ export const INPUT_RECIPE = [
         message: "マイ自炊セット",
     },
     {
-        key: "sellCocked",
+        key: "sellCooked",
         message: "市販の料理",
     },
     {
-        key: "cockPad",
+        key: "cookPad",
         message: "クックパッドの料理",
     },
 ];
