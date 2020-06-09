@@ -9,5 +9,5 @@ export default {
   Record: Record,
   Nutrients: Nutrients,
   Settings: Settings,
-  Login: Login,
+  DemoLogin: Login,
 };
