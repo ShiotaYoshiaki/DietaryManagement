@@ -32,10 +32,14 @@
         </view>
       </view>
     </view>
-    <view v-if="isModalActive" class="l_back_modal" >
-      <view class="l-modal">
-        <button title="閉じる" :on-press="openItem" />
+    <view v-if="isModalActive" class="l_back_modal">
+      <view class="l_modal">
+        <view class="l_close_button">
+          <button title="閉じる" :on-press="openItem" />
+        </view>
+        <view class="c_modal">
         <text>{ clickで表示したいmodal_content部分 }</text>
+        </view>
       </view>
     </view>
   </view>
@@ -133,15 +137,27 @@ export default {
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, .5);
   height: 100%;
   width: 100%;
-  opacity: 0.5;
 }
 
-.l-modal {
+.l_modal {
   height: 100;
   width: 100;
+  background-color: #ffffff;
+  opacity: 100;
+  min-width: 250;
+  min-height: 250;
+}
+
+.c_modal {
+  padding: 16
+}
+
+.l_close_button {
+  position: absolute;
   background-color: red;
+  right: 0;
 }
 </style>
