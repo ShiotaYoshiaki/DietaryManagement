@@ -6,7 +6,6 @@
       </view>
       <view class="c_modal">
         <slot></slot>
-        <text>{ clickで表示したいmodal_content部分 }</text>
       </view>
     </view>
   </view>
@@ -26,11 +25,6 @@ export default {
       default: true,
     }
   },
-  methods: {
-    test() {
-      console.log(this);
-    }
-  }
 };
 </script>
 

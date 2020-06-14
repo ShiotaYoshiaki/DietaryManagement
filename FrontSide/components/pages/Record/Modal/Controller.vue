@@ -29,7 +29,6 @@ import SellCooked from "./SellCooked";
 
 export default {
   data: () => {
-    console.log(this);
     return {
       records: RECORDS
     };
