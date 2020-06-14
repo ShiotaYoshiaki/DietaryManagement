@@ -2,9 +2,15 @@
   <view class="container">
     <text class="heading">Home</text>
     <text>This is the App Home screen</text>
+    <seachBox></seachBox>
   </view>
 </template>
-
+<script>
+  import seachBox from "../parts/searchBox";
+  export default {
+    components:{seachBox}
+  };
+</script>
 <style>
 .container {
   align-items: center;
