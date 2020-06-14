@@ -32,22 +32,14 @@
         </view>
       </view>
     </view>
-    <view v-if="isModalActive" class="l_back_modal">
-      <view class="l_modal">
-        <view class="l_close_button">
-          <button title="閉じる" :on-press="openItem" />
-        </view>
-        <view class="c_modal">
-        <text>{ clickで表示したいmodal_content部分 }</text>
-        </view>
-      </view>
-    </view>
+    <Modal :is_active="isModalActive" :open_func="openItem" />
   </view>
 </template>
 
 <script>
 import { MEALS } from "../../../constants/meals";
 import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
+import Modal from "../../parts/Modal";
 
 export default {
   data: () => {
@@ -58,6 +50,7 @@ export default {
       isModalActive: false
     };
   },
+  components: { Modal },
   methods: {
     /**
      * clickイベントが発火されたタイミングで、
@@ -70,7 +63,6 @@ export default {
      * active状態を切り替える。
      */
     toggleModal() {
-      console.log("toggleModal");
       this.isModalActive = !this.isModalActive;
     }
   }
@@ -137,27 +129,8 @@ export default {
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
-}
-
-.l_modal {
-  height: 100;
-  width: 100;
-  background-color: #ffffff;
-  opacity: 100;
-  min-width: 250;
-  min-height: 250;
-}
-
-.c_modal {
-  padding: 16
-}
-
-.l_close_button {
-  position: absolute;
-  background-color: red;
-  right: 0;
 }
 </style>
