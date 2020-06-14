@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <textarea placeholder="検索" ></textarea>
-  </div>
+  <view class="seachBox">
+    <TextInput
+      placeholder="検索欄"
+    >
+  </view>
 </template>
-
-<script>
-export default {
-  
+<style modules>
+.seachBox{
+ width: 25%;
+  height: 30;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
 }
-</script>
-<style scoped>
-  
 </style>
