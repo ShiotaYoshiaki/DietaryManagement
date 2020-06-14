@@ -5,6 +5,7 @@
         <button title="閉じる" :on-press="open_func" />
       </view>
       <view class="c_modal">
+        <slot></slot>
         <text>{ clickで表示したいmodal_content部分 }</text>
       </view>
     </view>
@@ -19,7 +20,15 @@ export default {
       default: false
     },
     open_func: {
-      type: Function,
+      type: Function
+    },
+    children: {
+      default: true
+    }
+  },
+  methods: {
+    test() {
+      console.log(this);
     }
   }
 };

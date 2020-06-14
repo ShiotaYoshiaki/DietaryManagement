@@ -32,7 +32,11 @@
         </view>
       </view>
     </view>
-    <Modal :is_active="isModalActive" :open_func="openItem" />
+    <Modal :is_active="isModalActive" :open_func="openItem">
+      <view class="red">
+        <text>test太郎</text>
+      </view>
+    </Modal>
   </view>
 </template>
 
@@ -40,6 +44,7 @@
 import { MEALS } from "../../../constants/meals";
 import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
 import Modal from "../../parts/Modal";
+import NewMySelf from "./Modal/NewMySelf";
 
 export default {
   data: () => {
@@ -50,7 +55,7 @@ export default {
       isModalActive: false
     };
   },
-  components: { Modal },
+  components: { Modal, NewMySelf },
   methods: {
     /**
      * clickイベントが発火されたタイミングで、
@@ -132,5 +137,9 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
+}
+
+.red {
+  background-color: red;
 }
 </style>
