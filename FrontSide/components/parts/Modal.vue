@@ -20,10 +20,10 @@ export default {
       default: false
     },
     open_func: {
-      type: Function
+      type: Function,
     },
     children: {
-      default: true
+      default: true,
     }
   },
   methods: {

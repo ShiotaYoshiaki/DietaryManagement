@@ -15,7 +15,7 @@
         <view class="l_content">
           <view class="l_recipi_button">
             <view class="c_recipi_button" v-for="recipi in recipis" :key="recipi.key">
-              <button :title="recipi.message" :on-press="openItem" />
+              <button :title="recipi.message" :on-press="() => openItem(recipi.key)" />
             </view>
           </view>
           <view>
@@ -33,9 +33,7 @@
       </view>
     </view>
     <Modal :is_active="isModalActive" :open_func="openItem">
-      <view class="red">
-        <text>test太郎</text>
-      </view>
+      <Controller :param="modalContent" />
     </Modal>
   </view>
 </template>
@@ -44,7 +42,7 @@
 import { MEALS } from "../../../constants/meals";
 import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
 import Modal from "../../parts/Modal";
-import NewMySelf from "./Modal/NewMySelf";
+import Controller from "./Modal/Controller";
 
 export default {
   data: () => {
@@ -52,23 +50,28 @@ export default {
       cokked: MEALS,
       recipis: INPUT_RECIPE,
       testRecord: EMPTY_RECIPE,
-      isModalActive: false
+      isModalActive: false,
+      modalContent: '',
     };
   },
-  components: { Modal, NewMySelf },
+  components: { Modal, Controller },
   methods: {
     /**
      * clickイベントが発火されたタイミングで、
      * オーバーレイコンテンツを表示するフラグを持つdata(isModalActive)を切り替える
      */
-    openItem() {
+    openItem(e) {
       this.toggleModal();
+      this.changeModalContent(e);
     },
     /**
      * active状態を切り替える。
      */
     toggleModal() {
       this.isModalActive = !this.isModalActive;
+    },
+    changeModalContent(e) {
+      this.modalContent = e;
     }
   }
 };
