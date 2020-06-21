@@ -3,6 +3,10 @@
     <text class="heading">Home</text>
     <text>This is the App Home screen</text>
     <catringSet></catringSet>
+    <nb-button block primary>
+      <nb-text>Primary</nb-text>
+    </nb-button>
+    <seachBox></seachBox>
   </view>
 </template>
 <script>
