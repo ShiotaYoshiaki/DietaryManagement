@@ -8,6 +8,7 @@ import {
   createStackNavigator,
 } from "vue-native-router";
 import * as Stack from "./routes/Stack";
+import NativeBase from "./store/NativeBase";
 
 const StackNavigator = createStackNavigator(Stack.default);
 const AppNavigator = createAppContainer(StackNavigator);
