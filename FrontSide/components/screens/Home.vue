@@ -6,7 +6,6 @@
     <nb-button block primary>
       <nb-text>Primary</nb-text>
     </nb-button>
-    <seachBox></seachBox>
   </view>
 </template>
 <script>
