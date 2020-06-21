@@ -2,14 +2,16 @@
   <view class="container">
     <text class="heading">Home</text>
     <text>This is the App Home screen</text>
-    <seachBox></seachBox>
+    <catringSet></catringSet>
   </view>
 </template>
 <script>
-  import seachBox from "../parts/searchBox";
-  export default {
-    components:{seachBox}
-  };
+import catringSet from "./catringSet";
+export default {
+  components:{
+    catringSet,
+  }
+}
 </script>
 <style>
 .container {

@@ -1,0 +1,31 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\..\\..\\..\\Desktop\\vue.js"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\Documents\\javascript sample\\practice1"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\Desktop\\blog"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\Desktop\\git_test"
+	},
+	{
+		"path": "..\\..\\..\\..\\mysite"
+	},
+	{
+		"path": "..\\..\\..\\..\\mysite\\practice_vue.js"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\node.js\\udemy-vue.js"
+	},
+	{
+		"path": "..\\..\\.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "mysite"
+  }
+}
