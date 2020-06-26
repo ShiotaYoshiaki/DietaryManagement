@@ -19,6 +19,7 @@ git clone git@github.com:ShiotaYoshiaki/DietaryManagement.git
 ## スマホアプリ
 
 * 「expo」というアプリをインストール
+* https://expo.io/tools
 
 ## 前提となるパッケージ
 
@@ -36,12 +37,18 @@ npm i -g expo-cli create-react-native-app vue-native-cli
 * カレントディレクトリをFrontSide内へ
   * ls をターミナルに入力してpackage.jsonが参照できればOK
 * 初回のみパッケージのインストール
-  * npm i
-* システム起動
-  * npm run start
-  * 
 
+```
+npm i
+```
 
+* システム起動 
+
+```
+npm run start
+``` 
+
+s
 
 
 

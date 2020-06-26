@@ -1,18 +1,11 @@
 <template>
-  <app-navigator></app-navigator>
+  <Loading></Loading>
 </template>
 
 <script>
-import {
-  createAppContainer,
-  createStackNavigator,
-} from "vue-native-router";
-import * as Stack from "./routes/Stack";
-
-const StackNavigator = createStackNavigator(Stack.default);
-const AppNavigator = createAppContainer(StackNavigator);
+import Loading from "./routes/Loading";
 
 export default {
-  components: { AppNavigator },
+  components: { Loading },
 };
 </script>
