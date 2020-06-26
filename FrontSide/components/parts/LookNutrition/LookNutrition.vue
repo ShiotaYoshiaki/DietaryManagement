@@ -1,11 +1,9 @@
 <template>
   <view>
-    <LookNutritionChild v-slot:toLookNutrition>
-      <template>
-        <text class="lookNutrition" style={styles.titleText}>栄養素を見る</text>
-      </template>
-    </LookNutritionChild>
-    <textInput :value="textParam" onChange="changeFunc">
+    <nb-button class="small-box">
+      <text class="small-font">栄養素を見る</text>
+    </nb-button>
+    <textInput v-model="numberParam">
   </view>
 </template>
 <script>
@@ -13,15 +11,12 @@ import LookNutritionChild from "./LookNutritionChild";
 export default {
   data: () => {
     return {
-      textParam: "0",
+      numberParam: "0",
     };
   },
   methods: {
-    changeFunc(e) {
-      const inputed = e.target.value;
-      if (inputed >= 0 && inputed < 100) {
-        this.textParam = inputed;
-      }
+    numberParam:function() {
+     alert("----");
     },
     lookNutritionfunc:function(){
       alert("hello");
@@ -33,7 +28,6 @@ export default {
 };
 </script>
 
-// styleが適応されません
 <style modules>
 view {
   color: blue;
@@ -41,5 +35,12 @@ view {
 .lookNutrition {
   color: rgb(167, 110, 110);
   font-size: 10px;
+}
+.small-box{
+  height: 40;
+  width:30;
+}
+.small-font{
+  font-size: 8;
 }
 </style>
