@@ -6,13 +6,14 @@
       <nb-text>Login</nb-text>
     </nb-button>
     <Modal :is_active="isModalActive" :open_func="openItem">
-      <text>test</text>
+      <Login />
     </Modal>
   </view>
 </template>
 
 <script>
 import Modal from "../parts/Modal";
+import Login from "../pages/Login/Index";
 
 export default {
   data: () => {
@@ -20,7 +21,7 @@ export default {
       isModalActive: false
     };
   },
-  components: { Modal },
+  components: { Modal, Login },
   methods: {
     /**
      * clickイベントが発火されたタイミングで、
