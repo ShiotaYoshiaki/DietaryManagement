@@ -1,11 +1,14 @@
 <template>
   <view>
     <seachBox></seachBox>
-    <LookNutrition></LookNutrition>
-    <serving></serving>
-    <checkBoxed></checkBoxed>
+    <view class="mylist_container">
+      <mylist></mylist>
+      <serving></serving>
+      <LookNutrition></LookNutrition>
+      <checkBoxed></checkBoxed>
+    </view>
+
     <addmenu></addmenu>
-    <mylist></mylist>
   </view>
 </template>
 
@@ -16,7 +19,7 @@ import serving from "../parts/serving";
 import checkBoxed from "../parts/checkBox/checkBoxed";
 import addmenu from "../parts/addmenu";
 import mylist from "../parts/mylist";
-
+// import sort from "../parts/sort"
 
 export default {
   components: {
@@ -26,6 +29,13 @@ export default {
     checkBoxed,
     addmenu,
     mylist,
+    // sort,
   },
 };
 </script>
+<style scoped>
+.mylist_container{
+   flex-direction: row;
+   padding-top: 20px;
+}
+</style>

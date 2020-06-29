@@ -7,23 +7,44 @@
   </view>
 </template>
 <script>
-import LookNutritionChild from "./LookNutritionChild";
 export default {
   data: () => {
     return {
       numberParam: "0",
+      LookNutritionList: [
+        {
+          protain: 10,
+          calsum: 10,
+          natorium: 15
+        },
+        {
+          protain: 10,
+          calsum: 10,
+          natorium: 15
+        },
+
+        {
+          protain: 10,
+          calsum: 10,
+          natorium: 15
+        },
+        {
+          protain: 10,
+          calsum: 10,
+          natorium: 15
+        },
+        {
+          protain: 10,
+          calsum: 10,
+          natorium: 15
+        },
+      ],
     };
   },
   methods: {
     numberParam:function() {
-     alert("----");
+     alert("栄養素一覧に飛ぶ予定");
     },
-    lookNutritionfunc:function(){
-      alert("hello");
-    }
-  },
-  components: {
-    LookNutritionChild,
   },
 };
 </script>

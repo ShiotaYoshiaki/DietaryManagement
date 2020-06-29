@@ -7,7 +7,7 @@
 export default {
   methods: {
       addMenuFunc: function () {
-      return  alert("--------");
+      return  alert("このボタンが押されたときに献立に追加します");
       },
     },
 };

@@ -7,7 +7,7 @@
 </template>
 <style modules>
 .seachBox{
- width: 100%;
+ width: 50%;
   height: 30;
   border-color: #000;
   border-style: solid;
