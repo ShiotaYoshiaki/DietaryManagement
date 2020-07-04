@@ -18,6 +18,11 @@ export const COOKPAD = {
     key: "cookPad",
     message: "クックパッドの料理",
 };
+export const MY_SELF_SET_REGISTER = {
+    key: "mySelfSetRegister",
+    message: "マイ自炊セット登録",
+};
+
 
 export const INPUT_RECIPE = [
     NEW_SELF_RECIPE,
