@@ -25,7 +25,7 @@ import addmenu from "../parts/addmenu";
 import mylist from "../parts/mylist";
 import sort from "../parts/sort";
 import { Mylist } from "../../constants/MyList";
-// import { cateringSet } from "../../constants/catering";
+import { confirmedList } from "../../constants/ConfirmedList";
 
 export default {
   components: {
@@ -36,29 +36,11 @@ export default {
     addmenu,
     mylist,
     sort,
-    // cateringSet
   },
   data: () => {
     return {
       cooks: Mylist,
-      confirmedList: [
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-      ],
+      confirmedList: confirmedList,
     };
   },
   methods: {

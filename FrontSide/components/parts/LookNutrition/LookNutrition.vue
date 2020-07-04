@@ -7,38 +7,12 @@
   </view>
 </template>
 <script>
+import LookNutritionList from "../../../constants/LookNutritionList"
 export default {
   data: () => {
     return {
       numberParam: "0",
-      LookNutritionList: [
-        {
-          protain: 10,
-          calsum: 10,
-          natorium: 15
-        },
-        {
-          protain: 10,
-          calsum: 10,
-          natorium: 15
-        },
-
-        {
-          protain: 10,
-          calsum: 10,
-          natorium: 15
-        },
-        {
-          protain: 10,
-          calsum: 10,
-          natorium: 15
-        },
-        {
-          protain: 10,
-          calsum: 10,
-          natorium: 15
-        },
-      ],
+      LookNutritionList:LookNutritionList,
     };
   },
   methods: {
