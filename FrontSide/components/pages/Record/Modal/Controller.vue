@@ -30,14 +30,14 @@ import SellCooked from "./SellCooked";
 export default {
   data: () => {
     return {
-      records: RECORDS
+      records: RECORDS,
     };
   },
   components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet },
   props: {
     param: {
       type: String,
-      default: "test"
+      default: "test",
     },
   },
 };

@@ -9,21 +9,32 @@
             class="l_tab_cook"
             accessibilityRole="button"
           >
-            <text>{{ cook.message}}</text>
+            <text>{{ cook.message }}</text>
           </view>
         </view>
         <view class="l_content">
           <view class="l_recipi_button">
-            <view class="c_recipi_button" v-for="recipi in recipis" :key="recipi.key">
-              <button :title="recipi.message" :on-press="() => openItem(recipi.key)" />
+            <view
+              class="c_recipi_button"
+              v-for="recipi in recipis"
+              :key="recipi.key"
+            >
+              <button
+                :title="recipi.message"
+                :on-press="() => openItem(recipi.key)"
+              />
             </view>
           </view>
           <view>
             <view class="c_recipi_label">
               <text>朝食の献立</text>
             </view>
-            <view class="c_recipi_history" v-for="record in testRecord" :key="record.key">
-              <text>{{record.message}}</text>
+            <view
+              class="c_recipi_history"
+              v-for="record in testRecord"
+              :key="record.key"
+            >
+              <text>{{ record.message }}</text>
             </view>
             <view>
               <text>マイ自炊セットに登録</text>
@@ -51,7 +62,7 @@ export default {
       recipis: INPUT_RECIPE,
       testRecord: EMPTY_RECIPE,
       isModalActive: false,
-      modalContent: '',
+      modalContent: "",
     };
   },
   components: { Modal, Controller },
@@ -72,8 +83,8 @@ export default {
     },
     changeModalContent(e) {
       this.modalContent = e;
-    }
-  }
+    },
+  },
 };
 </script>
 

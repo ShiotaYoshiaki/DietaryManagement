@@ -2,18 +2,8 @@
   <view class="container">
     <text class="heading">Home</text>
     <text>This is the App Home screen</text>
-    <nb-button block primary>
-      <nb-text>Primary</nb-text>
-    </nb-button>
-    <seachBox></seachBox>
   </view>
 </template>
-<script>
-  import seachBox from "../parts/searchBox";
-  export default {
-    components:{seachBox}
-  };
-</script>
 <style>
 .container {
   align-items: center;
