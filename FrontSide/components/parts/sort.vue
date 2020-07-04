@@ -1,7 +1,7 @@
 <template>
   <view>
     <nb-button :on-press="changeSort" class="sort_button">
-      <text>ソート  </text>
+      <text>ソート</text>
     </nb-button>
   </view>
 </template>

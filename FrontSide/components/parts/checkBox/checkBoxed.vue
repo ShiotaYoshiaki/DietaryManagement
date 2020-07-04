@@ -10,7 +10,6 @@
       >
       </nb-checkbox>
     </view>
-
     <!-- ここから献立に追加 -->
     <nb-button block bordered :on-press="addMenuFunc">
       <text>献立に追加</text>
@@ -49,7 +48,5 @@ export default {
 <style scoped>
 .checkboxStyle {
   background-color: rgb(108, 202, 187);
-  /* transform: scale(1.4); */
-  /* margin: 5; */
 }
 </style>

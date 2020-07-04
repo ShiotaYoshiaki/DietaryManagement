@@ -6,25 +6,11 @@
   </view>
 </template>
 <script>
-// import { Mylist } from "../../constants/MyList";
 import sort from "./sort";
 export default {
   props: {
     cooks: {
       type: Array,
-    },
-  },
-  methods: {
-    ChangedCooks() {
-      const sorted = this.cooks.map((cook) => cook.message);
-      sorted.sort();
-      const nextcooks = sorted.map((param) => {
-        return this.cooks.find((cook) => {
-          return cook.message === param;
-        });
-      });
-      this.cooks = nextcooks;
-      this.$emit("toCateringSet");
     },
   },
   components: {

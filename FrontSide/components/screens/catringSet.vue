@@ -4,7 +4,7 @@
       <seachBox></seachBox>
       <sort @changeCooks="ChangedCooks"></sort>
     </view>
-    
+
     <view class="mylist_container">
       <mylist :cooks="cooks"></mylist>
       <serving></serving>
@@ -25,6 +25,7 @@ import addmenu from "../parts/addmenu";
 import mylist from "../parts/mylist";
 import sort from "../parts/sort";
 import { Mylist } from "../../constants/MyList";
+// import { cateringSet } from "../../constants/catering";
 
 export default {
   components: {
@@ -35,6 +36,7 @@ export default {
     addmenu,
     mylist,
     sort,
+    // cateringSet
   },
   data: () => {
     return {
@@ -59,7 +61,7 @@ export default {
       ],
     };
   },
-   methods: {
+  methods: {
     ChangedCooks() {
       const sorted = this.cooks.map((cook) => cook.message);
       sorted.sort();
@@ -79,7 +81,7 @@ export default {
   flex-direction: row;
   padding-top: 20px;
 }
-.sort_container{
-    flex-direction: row;
+.sort_container {
+  flex-direction: row;
 }
 </style>
