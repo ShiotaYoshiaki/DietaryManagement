@@ -21,10 +21,10 @@
 
 <script>
 export default {
-  props:{
-    confirmedList:{
-      type: Array
-    }
+  props: {
+    confirmedList: {
+      type: Array,
+    },
   },
   data() {
     return {
