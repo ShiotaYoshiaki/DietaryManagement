@@ -15,6 +15,9 @@
     <view v-if="param === records.COOKPAD.key">
       <CookPad />
     </view>
+    <view v-if="param === records.MY_SELF_SET_REGISTER.key">
+      <MySelfSetRegister />
+    </view>
   </view>
 </template>
 
@@ -26,6 +29,7 @@ import MySelfList from "./MySelfList";
 import MySelfSet from "./MySelfSet";
 import NewMySelf from "./NewSelfRecipe";
 import SellCooked from "./SellCooked";
+import MySelfSetRegister from "./MySelfSetRegister";
 
 export default {
   data: () => {
@@ -33,7 +37,7 @@ export default {
       records: RECORDS
     };
   },
-  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet },
+  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet, MySelfSetRegister },
   props: {
     param: {
       type: String,
