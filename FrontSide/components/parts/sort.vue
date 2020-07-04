@@ -1,35 +1,22 @@
 <template>
   <view>
-    <nb-button small>
-      <text>ソートで変更</text>
+    <nb-button :on-press="changeSort" class="sort_button">
+      <text>ソート  </text>
     </nb-button>
-    <text>{{Mylist}}</text>
-    <!-- <text>{{ sortArry }}</text> -->
   </view>
 </template>
 <script>
 export default {
-  // props:[Mylist],
-  data: () => {
-    return {
-      /**
-       * mylistAryにmylistを配列で格納します。
-       */
-      mylistAry: [],
-      /**
-       * さらにmylistAry[0]の中を配列に格納します。
-       */
-      sortArry: [],
-    };
-  },
   methods: {
-    SortArryFunc: function () {
-      this.mylistAry.push(this.cooks);
-      this.mylistAry[0].forEach((element) => {
-        this.sortArry.push(element);
-      });
-      this.sortArry.sort();
+    changeSort() {
+      this.$emit("changeCooks");
     },
   },
 };
 </script>
+<style modules>
+  .sort_button{
+    margin-left: 30;
+    height: 25;
+  }
+</style>

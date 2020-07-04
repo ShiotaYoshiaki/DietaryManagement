@@ -1,11 +1,15 @@
 <template>
   <view>
-    <seachBox></seachBox>
+    <view class="sort_container">
+      <seachBox></seachBox>
+      <sort @changeCooks="ChangedCooks"></sort>
+    </view>
+    
     <view class="mylist_container">
-      <mylist></mylist>
+      <mylist :cooks="cooks"></mylist>
       <serving></serving>
       <LookNutrition></LookNutrition>
-      <checkBoxed></checkBoxed>
+      <checkBoxed :confirmedList="confirmedList"></checkBoxed>
     </view>
 
     <addmenu></addmenu>
@@ -19,7 +23,8 @@ import serving from "../parts/serving";
 import checkBoxed from "../parts/checkBox/checkBoxed";
 import addmenu from "../parts/addmenu";
 import mylist from "../parts/mylist";
-// import sort from "../parts/sort"
+import sort from "../parts/sort";
+import { Mylist } from "../../constants/MyList";
 
 export default {
   components: {
@@ -29,13 +34,52 @@ export default {
     checkBoxed,
     addmenu,
     mylist,
-    // sort,
+    sort,
+  },
+  data: () => {
+    return {
+      cooks: Mylist,
+      confirmedList: [
+        {
+          confirmed: false,
+        },
+        {
+          confirmed: false,
+        },
+
+        {
+          confirmed: false,
+        },
+        {
+          confirmed: false,
+        },
+        {
+          confirmed: false,
+        },
+      ],
+    };
+  },
+   methods: {
+    ChangedCooks() {
+      const sorted = this.cooks.map((cook) => cook.message);
+      sorted.sort();
+      const nextcooks = sorted.map((param) => {
+        return this.cooks.find((cook) => {
+          return cook.message === param;
+        });
+      });
+      this.cooks = nextcooks;
+      this.$emit("toCateringSet");
+    },
   },
 };
 </script>
 <style scoped>
-.mylist_container{
-   flex-direction: row;
-   padding-top: 20px;
+.mylist_container {
+  flex-direction: row;
+  padding-top: 20px;
+}
+.sort_container{
+    flex-direction: row;
 }
 </style>

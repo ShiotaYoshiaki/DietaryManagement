@@ -2,7 +2,7 @@
   <view class="seachBox">
     <TextInput
       placeholder="検索欄"
-    >
+    />
   </view>
 </template>
 <style modules>

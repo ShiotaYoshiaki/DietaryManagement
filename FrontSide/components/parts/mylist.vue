@@ -1,35 +1,34 @@
 <template>
   <view>
-    <view class="sort_container">
-      <nb-button :on-press="SortArryFunc" class="sort_button">
-        <text>ソートで変更</text>
-      </nb-button>
-    </view>
     <view v-for="cook in cooks" :key="cook.key">
-      <nb-text>{{ cook.message }}</nb-text>
+      <nb-text class="message_size">{{ cook.message }}</nb-text>
     </view>
   </view>
 </template>
 <script>
-import { Mylist } from "../../constants/MyList";
+// import { Mylist } from "../../constants/MyList";
 import sort from "./sort";
 export default {
-  data: () => {
-    return {
-      cooks: Mylist,
-    };
+  props: {
+    cooks: {
+      type: Array,
+    },
   },
   methods: {
-    SortArryFunc: function () {
+    ChangedCooks() {
       const sorted = this.cooks.map((cook) => cook.message);
       sorted.sort();
-      const nextCooks = sorted.map((param) => {
+      const nextcooks = sorted.map((param) => {
         return this.cooks.find((cook) => {
           return cook.message === param;
         });
       });
-      this.cooks = nextCooks;
+      this.cooks = nextcooks;
+      this.$emit("toCateringSet");
     },
+  },
+  components: {
+    sort,
   },
 };
 </script>
@@ -51,5 +50,8 @@ export default {
 .sort_container {
   background-color: red;
   position: relative;
+}
+.message_size{
+  font-size: 12;
 }
 </style>

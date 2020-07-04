@@ -3,7 +3,7 @@
     <nb-button class="small-box">
       <text class="small-font">栄養素を見る</text>
     </nb-button>
-    <textInput v-model="numberParam">
+    <textInput v-model="numberParam"/>
   </view>
 </template>
 <script>

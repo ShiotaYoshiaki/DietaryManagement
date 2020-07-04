@@ -6,7 +6,7 @@
         :key="index"
         :checked="list.confirmed"
         :onPress="() => changeCheckbox(index)"
-        class="checkbox"
+        class="checkboxStyle"
       >
       </nb-checkbox>
     </view>
@@ -21,26 +21,13 @@
 
 <script>
 export default {
+  props:{
+    confirmedList:{
+      type: Array
+    }
+  },
   data() {
     return {
-      confirmedList: [
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-        {
-          confirmed: false,
-        },
-      ],
       /**
        * checkボックス内の値を確認
        */
@@ -60,9 +47,9 @@ export default {
 };
 </script>
 <style scoped>
-.checkbox {
+.checkboxStyle {
   background-color: rgb(108, 202, 187);
-  transform: scale(1.4);
-  margin: 5;
+  /* transform: scale(1.4); */
+  /* margin: 5; */
 }
 </style>
