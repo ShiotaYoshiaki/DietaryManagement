@@ -32,7 +32,7 @@ function getFormat(csvData) {
 function toFormatJson(format, filteredPureCsv) {
   const keys = Object.keys(format);
   const formatJson = filteredPureCsv.map((data) => {
-    const currentFormat = format;
+    const currentFormat = JSON.parse(JSON.stringify(format));
     data.forEach((param, i) => {
       if (i < onlyNumRow || i === remarksNum) {
         currentFormat[keys[i]] = param;
