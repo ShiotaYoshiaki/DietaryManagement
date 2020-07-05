@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "babel-node src/(index.js).default()",
-    "devA": "babel-node -e \"require('./src/index.js').default()\"",
+    "dev": "babel-node -e \"require('./src/index.js').default()\"",
     "eject": "react-scripts eject"
   },
-  "dependencies": {},
+  "dependencies": {
+    "csv-parse": "^4.10.1",
+    "encoding-japanese": "^1.0.30",
+  },
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
