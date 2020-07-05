@@ -7,8 +7,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "csv-parse": "^4.10.1",
-    "encoding-japanese": "^1.0.30",
+    "csv-parse": "4.10.1",
+    "encoding-japanese": "1.0.30"
   },
   "devDependencies": {
     "babel-core": "6.26.3",

@@ -1,7 +1,7 @@
 import fs from "fs";
-import csvSync from 'csv-parse/lib/sync';
-import encoding from 'encoding-japanese';
-import ERROR_MESSAGE from '../message/error.json';
+import csvSync from "csv-parse/lib/sync";
+import encoding from "encoding-japanese";
+import ERROR_MESSAGE from "../message/error.json";
 
 const puttedPath = "./data";
 const importExtension = "csv";
@@ -17,26 +17,22 @@ async function getCsvFiles() {
   const fileNames = allDirents
     .filter((dirent) => isCSV(dirent))
     .map(({ name }) => name);
-  return fileNames;
+  // 階層には1つのcsvのみの想定なので、最初のものを取る
+  return fileNames[0];
 }
 
 async function getFileContents(fileNames) {
-  const contents = await Promise.all(
-    fileNames.map(async (name) => {
-      const filePath = `${puttedPath}/${name}`;
-      const data = fs.readFileSync(filePath);
-      if (encoding.detect(data) === 'SJIS') {
-        throw new Error(ERROR_MESSAGE.SHIFT, name);
-      }
-      const res = csvSync(data);
-      return res;
-    })
-  );
-  return contents;
+  const filePath = `${puttedPath}/${fileNames}`;
+  const data = fs.readFileSync(filePath);
+  if (encoding.detect(data) === "SJIS") {
+    throw new Error(ERROR_MESSAGE.SHIFT, fileNames);
+  }
+  const res = csvSync(data);
+  return res;
 }
 
 export default async () => {
-  const fileNames = await getCsvFiles();
-  const contents = await getFileContents(fileNames);
-  return contents;
+  const fileName = await getCsvFiles();
+  const content = await getFileContents(fileName);
+  return content;
 };
