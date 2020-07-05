@@ -1,0 +1,31 @@
+{
+  "name": "insert-nutrition-csv",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "babel-node src/(index.js).default()",
+    "devA": "babel-node -e \"require('./src/index.js').default()\"",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-cli": "6.26.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
