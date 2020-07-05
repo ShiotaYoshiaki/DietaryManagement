@@ -1,7 +1,7 @@
 {
   "REGION": "ap-northeast-1",
   "DB_ENDPOINT": "dynamodb.ap-northeast-1.amazonaws.com",
-  "ACCESS_KEY_ID": "AKIAQ4DL7NOUPKBUSYE6",
-  "SECRET_ACCESS_KEY": "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",
+  "ACCESS_KEY_ID": "anything",
+  "SECRET_ACCESS_KEY": "anything",
   "MAX_RETRIES": 3
 }
