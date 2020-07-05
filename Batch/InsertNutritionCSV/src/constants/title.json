@@ -1,0 +1,30 @@
+[
+  {
+    "key": "group",
+    "title": "食品群"
+  },
+  {
+    "key": "id",
+    "title": "食品番号"
+  },
+  {
+    "key": "search_num",
+    "title": "索引番号"
+  },
+  {
+    "key": "original_name",
+    "title": "食品名"
+  },
+  {
+    "key": "display_name",
+    "title": "アプリ用の名前"
+  },
+  {
+    "key": "isNeed",
+    "title": "必要：1\n不必要：0"
+  },
+  {
+    "key": "abandonment_rate",
+    "title": "廃 棄 率"
+  }
+]
