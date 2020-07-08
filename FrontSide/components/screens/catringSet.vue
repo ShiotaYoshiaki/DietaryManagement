@@ -43,7 +43,7 @@ export default {
     return {
       cooks: Mylist,
       confirmedList: confirmedList,
-      keyword: " ",
+      keyword: "aaaa",
       test: [],
     };
   },
@@ -72,7 +72,7 @@ export default {
           this.cooks = changeNextCooks;
         });
       }
-      // alert("----");
+      alert("----");
     },
   },
 };
@@ -84,5 +84,6 @@ export default {
 }
 .sort_container {
   flex-direction: row;
+  /* background-color: red; */
 }
 </style>
