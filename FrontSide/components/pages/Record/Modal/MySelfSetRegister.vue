@@ -1,6 +1,9 @@
 // マイ自炊セット登録 (作成者 : 田中)
 <template>
-  <text>MySelfSetRegister</text>
+  <view>
+    <text>MySelfSetRegister</text>
+    <MenuNameTextbox></MenuNameTextbox>
+  </view>
 </template>
 
 <script>
@@ -9,13 +12,14 @@ import MenuList from "../../../parts/List/MenuList";
 import MenuRegisterButton from "../../../parts/Button/MenuRegisterButton";
 import LookNutritionListButton from "../../../parts/Button/LookNutritionListButton";
 
-
-
 export default {
-  
-}
+  components: {
+    MenuNameTextbox,
+    MenuList,
+    MenuRegisterButton,
+    LookNutritionListButton,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
