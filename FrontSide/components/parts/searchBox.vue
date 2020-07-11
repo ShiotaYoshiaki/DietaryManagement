@@ -31,11 +31,11 @@ export default {
 <style modules>
 .seachBox {
   flex-direction: row;
-  padding: 20px;
+  width: 70%;
+  border-width: 1px;
 }
 .serchBox_button {
   background-color: #008080;
-  margin-left: 5px;
   align-items: center;
   justify-content: center;
   padding-top: 10px;
@@ -45,7 +45,7 @@ export default {
   background-color: white;
   margin-right: 5px;
   flex: 3;
-  border-width: 1px;
+
   width: 100%;
 }
 .button_text {
