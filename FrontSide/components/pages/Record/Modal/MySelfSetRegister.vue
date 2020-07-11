@@ -2,6 +2,7 @@
 <template>
   <view>
     <MenuNameTextbox></MenuNameTextbox>
+    <MenuList :menu="menu"></MenuList>
   </view>
 </template>
 
@@ -10,6 +11,7 @@ import MenuNameTextbox from "../../../parts/Textbox/MenuNameTextbox";
 import MenuList from "../../../parts/List/MenuList";
 import MenuRegisterButton from "../../../parts/Button/MenuRegisterButton";
 import LookNutritionListButton from "../../../parts/Button/LookNutritionListButton";
+import { EMPTY_RECIPE } from "../../../../constants/Records"
 
 export default {
   components: {
@@ -17,6 +19,11 @@ export default {
     MenuList,
     MenuRegisterButton,
     LookNutritionListButton,
+  },
+  data: () => {
+    return {
+      menu: EMPTY_RECIPE,
+    };
   },
 };
 </script>
