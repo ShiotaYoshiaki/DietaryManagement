@@ -10,11 +10,6 @@
       >
       </nb-checkbox>
     </view>
-    <!-- ここから献立に追加 -->
-    <nb-button block bordered :on-press="addMenuFunc">
-      <text>献立に追加</text>
-    </nb-button>
-    <text>{{ ary }}</text>
   </view>
 </template>
 
@@ -24,14 +19,6 @@ export default {
     confirmedList: {
       type: Array,
     },
-  },
-  data() {
-    return {
-      /**
-       * checkボックス内の値を確認
-       */
-      ary: [],
-    };
   },
   methods: {
     changeCheckbox: function (i) {

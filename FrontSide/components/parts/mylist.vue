@@ -38,6 +38,7 @@ export default {
   position: relative;
 }
 .message_size{
-  font-size: 12;
+  font-size: 20;
+  margin-top: 25;
 }
 </style>

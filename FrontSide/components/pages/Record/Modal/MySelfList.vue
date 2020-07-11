@@ -1,6 +1,5 @@
 <template>
   <view>
-    <text>MySelfList</text>
    <catringSet></catringSet>
   </view>
 </template>
@@ -12,3 +11,5 @@ export default {
   }
 }
 </script>
+<style scoped>
+</style>
