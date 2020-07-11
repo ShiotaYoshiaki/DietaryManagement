@@ -1,7 +1,6 @@
 // マイ自炊セット登録 (作成者 : 田中)
 <template>
   <view>
-    <text>MySelfSetRegister</text>
     <MenuNameTextbox></MenuNameTextbox>
   </view>
 </template>

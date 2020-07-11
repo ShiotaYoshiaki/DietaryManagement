@@ -1,6 +1,6 @@
 // マイ自炊セット登録の「献立名」のテキストボックス
 <template>
-  <view class="flex m20">
+  <view class="flex mt10">
     <view class="menuName">
       <text>献立名 : </text>
     </view>
@@ -21,8 +21,8 @@ export default {
   flex-direction: row;
 }
 
-.m20 {
-  margin: 20px;
+.mt10 {
+  margin-top: 10px;
 }
 
 .menuName {
@@ -30,8 +30,8 @@ export default {
 }
 
 .menuNameTextbox {
-  width: 50%;
-  height: 30;
+  width: 80%;
+  height: 130%;
   border-color: #000;
   border-style: solid;
   border-width: 1px;
