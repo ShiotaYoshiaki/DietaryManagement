@@ -80,16 +80,11 @@ export default {
 <style scoped>
 .mylist_container {
   flex-direction: row;
-  padding-top: 20px;
-  /* align-items: center; */
+  align-items: center;
 }
 .sort_container {
   align-items: center;
   flex-direction: row;
- 
-}
-.test{
-   /* background-color: red; */
-   width: 40;
+  width: 100%;
 }
 </style>
