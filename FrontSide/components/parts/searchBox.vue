@@ -1,6 +1,11 @@
 <template>
   <view class="seachBox">
-    <text-input placeholder="検索欄" v-model="keyword" class="text_input" />
+    <text-input
+      placeholder="検索欄"
+      v-model="keyword"
+      class="text_input"
+      :on-change="(e) => changeKeyword(e)"
+    />
     <touchable-opacity class="serchBox_button" :on-press="keywordFunc"
       ><text class="button_text">検索</text></touchable-opacity
     >
@@ -19,10 +24,12 @@ export default {
       type: String,
       default: "dafault",
     },
+    changeKeyword: {
+      type: Function,
+    },
   },
   methods: {
     keywordFunc() {
-      alert("-------");
       this.$emit("serchFunc");
     },
   },
