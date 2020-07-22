@@ -5,14 +5,14 @@
         <text-input v-model="keyword" />
       </view>
       <view class="serch">
-        <touchable-opacity>
+        <nb-button>
           <text>検索</text>
-        </touchable-opacity>
+        </nb-button>
       </view>
       <view class="Sort">
-        <touchable-opacity :on-press="changeSort">
+        <nb-button :on-press="changeSort">
           <MaterialIcons name="sort" size="40" color="black" />
-        </touchable-opacity>
+        </nb-button>
       </view>
     </view>
     <view class="Main">
@@ -34,9 +34,9 @@
     </view>
     <view class="Last">
       <view class="Add_menu">
-        <touchable-opacity :on-press="addFunc">
+        <nb-button :on-press="addFunc">
           <text>献立に追加</text>
-        </touchable-opacity>
+        </nb-button>
       </view>
     </view>
   </view>
@@ -61,21 +61,30 @@ export default {
     open_func: {
       type: Function,
     },
-    is_active: {
-      type: Boolean,
-      default: false
+    testRecord: {
+      type: Array,
     },
   },
   methods: {
     changeSort() {
-      console.log(this.cooks);
+      console.log(this.testRecord);
     },
     addFunc() {
       const boolemAdd = this.cooks.filter((value) => {
         const filterValue = value.checked;
         return filterValue;
       });
-      console.log("ここからemit");
+      let testRecordLength = this.testRecord.length + 1;
+      const newboolemAdd = boolemAdd.map((value) => {
+        value.key = testRecordLength;
+        testRecordLength++;
+        return value;
+      });
+      console.log("---------testRecord");
+      console.log(this.testRecord);
+      console.log("---------newboolemAdd");
+      console.log(newboolemAdd);
+      this.testRecord.push(newboolemAdd[0]);
       this.open_func();
     },
   },

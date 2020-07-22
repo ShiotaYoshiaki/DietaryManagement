@@ -4,7 +4,7 @@
       <NewMySelf />
     </view>
     <view v-if="param === records.MY_SELF_RECIPE.key">
-      <MySelfList :open_func="open_func" />
+      <MySelfList :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.MY_SELF_SET.key">
       <MySelfSet />
@@ -33,7 +33,7 @@ export default {
       records: RECORDS,
     };
   },
-  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet},
+  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet },
   props: {
     param: {
       type: String,
@@ -41,7 +41,10 @@ export default {
     },
     open_func: {
       type: Function,
-    }
+    },
+    testRecord: {
+      type: Array,
+    },
   },
 };
 </script>
