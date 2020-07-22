@@ -24,13 +24,23 @@
           <text-input v-model="number" type="number" />
         </view>
         <view class="CheckBox">
-          <nb-checkbox :checked="cook.checked" :on-press="() => cook.checked = !cook.checked"></nb-checkbox>
+          <nb-checkbox
+            :checked="cook.checked"
+            :on-press="() => (cook.checked = !cook.checked)"
+          ></nb-checkbox>
         </view>
         <view class="Look_nutrition"></view>
       </view>
     </view>
     <view class="Last">
-      <view class="Add_menu"></view>
+      <view class="Add_menu">
+        <touchable-opacity :on-press="addFunc">
+          <text>献立に追加</text>
+        </touchable-opacity>
+        <touchable-opacity :on-press="() =>(is_active = !is_active)">
+          <text>test</text>
+        </touchable-opacity>
+      </view>
     </view>
   </view>
 </template>
@@ -38,6 +48,7 @@
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
 import { Mylist } from "../../../constants/MyList";
+import Modal from "../../parts/Modal";
 export default {
   data() {
     return {
@@ -49,10 +60,27 @@ export default {
   },
   components: {
     MaterialIcons,
+    Modal,
+  },
+  props: {
+    open_func: {
+      type: Function,
+    },
+    is_active: {
+      type: Boolean,
+      default: false
+    },
   },
   methods: {
     changeSort() {
-      console.log(this.keyword);
+      console.log(this.cooks);
+    },
+    addFunc() {
+      const boolemAdd = this.cooks.filter((value) => {
+        const filterValue = value.checked;
+        return filterValue;
+      });
+      console.log("ここからemit");
     },
   },
 };
