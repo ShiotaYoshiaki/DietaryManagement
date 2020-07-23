@@ -22,6 +22,7 @@
         </view>
         <view class="Serving">
           <text-input v-model="number" type="number" />
+          <text>人前</text>
         </view>
         <view class="CheckBox">
           <nb-checkbox
@@ -29,7 +30,11 @@
             :on-press="() => (cook.checked = !cook.checked)"
           ></nb-checkbox>
         </view>
-        <view class="Look_nutrition"></view>
+        <view class="Look_nutrition">
+          <nb-button>
+            <text>栄養素を見る</text>
+          </nb-button>
+        </view>
       </view>
     </view>
     <view class="Last">
@@ -86,6 +91,9 @@ export default {
 </script>
 
 <style modules>
+nb-button {
+  background-color: antiquewhite;
+}
 .Top {
   background-color: rgb(174, 228, 230);
   flex-direction: row;
@@ -107,14 +115,38 @@ export default {
   border-width: 1;
   flex: 1;
 }
+.Main {
+  width: 100%;
+  border-width: 1;
+  margin-top: 1;
+}
 .List {
   background-color: rgb(174, 228, 230);
   flex-direction: row;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   align-items: center;
+  border-bottom-width: 1;
+}
+.My_list {
+  flex: 3;
 }
 .Serving {
-  background-color: rgb(162, 157, 168);
+  flex: 2;
+  flex-direction: row;
+}
+.CheckBox {
+  flex: 2;
+}
+.Look_nutrition {
+  flex: 2;
+}
+.Last {
+  justify-content: flex-end;
+  flex-direction: row;
+}
+.Add_menu {
+  margin-top: 1;
+  width: 25%;
 }
 </style>
