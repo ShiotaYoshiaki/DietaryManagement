@@ -2,10 +2,10 @@
   <view>
     <view class="Top">
       <view class="SerchBox">
-        <text-input v-model="keyword" />
+        <text-input v-model="keyword" :on-change="(e) => changeKeyword(e)" />
       </view>
       <view class="serch">
-        <nb-button>
+        <nb-button :on-press="searchFunc">
           <text>検索</text>
         </nb-button>
       </view>
@@ -31,7 +31,7 @@
           ></nb-checkbox>
         </view>
         <view class="Look_nutrition">
-          <nb-button>
+          <nb-button :on-press="Look_nutritionFunc">
             <text>栄養素を見る</text>
           </nb-button>
         </view>
@@ -71,8 +71,29 @@ export default {
     },
   },
   methods: {
+    changeKeyword(e) {
+      this.keyword = e.nativeEvent.text;
+    },
+    searchFunc() {
+      const searched = this.cooks.filter((value) => {
+        const indexNum = value.message.indexOf(this.keyword);
+        return indexNum !== -1;
+      });
+      this.cooks = searched;
+    },
     changeSort() {
-      console.log(this.testRecord);
+      const sorted = this.cooks.map((cook) => {
+        return cook.message;
+      });
+      sorted.sort();
+      console.log(sorted);
+      const sortedCooks = sorted.map((param) => {
+        return this.cooks.find((cook) => {
+          return cook.message === param;
+        });
+      });
+      console.log(sortedCooks);
+        this.cooks = sortedCooks;
     },
     addFunc() {
       const boolemAdd = this.cooks.filter((value) => {
@@ -86,6 +107,9 @@ export default {
       });
       this.open_func();
     },
+    Look_nutritionFunc() {
+      console.log("ここを押すと栄養素一覧は飛びます");
+    }
   },
 };
 </script>
