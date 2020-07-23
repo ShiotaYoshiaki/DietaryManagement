@@ -75,16 +75,10 @@ export default {
         return filterValue;
       });
       let testRecordLength = this.testRecord.length + 1;
-      const newboolemAdd = boolemAdd.map((value) => {
-        value.key = testRecordLength;
-        testRecordLength++;
-        return value;
-      });
-      console.log("---------testRecord");
       console.log(this.testRecord);
-      console.log("---------newboolemAdd");
-      console.log(newboolemAdd);
-      this.testRecord.push(newboolemAdd[0]);
+      boolemAdd.forEach((element) => {
+        this.testRecord.push(element);
+      });
       this.open_func();
     },
   },

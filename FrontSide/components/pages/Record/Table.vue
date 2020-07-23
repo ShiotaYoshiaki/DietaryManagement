@@ -29,13 +29,22 @@
             <view class="c_recipi_label">
               <text>朝食の献立</text>
             </view>
-            <view
-              class="c_recipi_history"
-              v-for="record in testRecord"
-              :key="record.key"
+
+            <scroll-view
+              :content-container-style="{
+                contentContainer: {
+                  paddingVertical: 20,
+                },
+              }"
             >
-              <text>{{ record.message }}</text>
-            </view>
+              <view
+                class="c_recipi_history"
+                v-for="record in testRecord"
+                :key="record.key"
+              >
+                <text>{{ record.message }}</text>
+              </view>
+            </scroll-view>
             <view>
               <text>マイ自炊セットに登録</text>
             </view>
