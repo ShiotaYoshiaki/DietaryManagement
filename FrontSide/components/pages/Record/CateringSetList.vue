@@ -86,11 +86,13 @@ export default {
         return cook.message;
       });
       sorted.sort();
+      console.log(sorted);
       const sortedCooks = sorted.map((param) => {
         return this.cooks.find((cook) => {
           return cook.message === param;
         });
       });
+      console.log(sortedCooks);
         this.cooks = sortedCooks;
     },
     addFunc() {
@@ -99,6 +101,7 @@ export default {
         return filterValue;
       });
       let testRecordLength = this.testRecord.length + 1;
+      console.log(this.testRecord);
       boolemAdd.forEach((element) => {
         this.testRecord.push(element);
       });
