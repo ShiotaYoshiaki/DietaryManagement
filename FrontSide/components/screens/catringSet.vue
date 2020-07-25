@@ -5,7 +5,6 @@
         :cooks="cooks"
         :test="test"
         :keyword="keyword"
-        :changeKeyword="changeKeyword"
         @serchFunc="changelist"
       ></seachBox>
       <sort @changeCooks="ChangedCooks"></sort>
@@ -39,20 +38,16 @@ export default {
     addmenu,
     mylist,
     sort,
-  },  
+  },
   data: () => {
     return {
       cooks: Mylist,
       confirmedList: confirmedList,
-      keyword: "",
+      keyword: "aaaa",
       test: [],
     };
   },
   methods: {
-     changeKeyword(e) {
-       console.log(e);
-      this.keyword = e.nativeEvent.text;
-    },
     ChangedCooks() {
       const sorted = this.cooks.map((cook) => cook.message);
       sorted.sort();
@@ -64,14 +59,20 @@ export default {
       this.cooks = nextcooks;
     },
     changelist() {
-      const searched = this.cooks.filter((cook) => {
-        const indexNum = cook.message.indexOf(this.keyword);
-        console.log(indexNum);
-        return indexNum !== -1;
+      const messagelist = this.cooks.map((value) => {
+        const list = value.message;
+        return list;
       });
-      console.log(searched);
-      console.log(this.cooks);
-      this.cooks = searched;
+      let cooksList = messagelist.indexOf(this.keyword);
+      if (cooksList == -1) {
+        const changeNextCooks = messagelist.map((param) => {
+          return this.cooks.find((cook) => {
+            return cook.message === param;
+          });
+          this.cooks = changeNextCooks;
+        });
+      }
+      alert("----");
     },
   },
 };

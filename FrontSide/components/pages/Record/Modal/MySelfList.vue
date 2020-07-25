@@ -1,13 +1,13 @@
 <template>
   <view>
-   <CateringSetList />
+   <catringSet></catringSet>
   </view>
 </template>
 <script>
-import CateringSetList from "../CateringSetList";
+import catringSet from "../../../screens/catringSet";
 export default {
   components:{
-    CateringSetList,
+    catringSet,
   }
 }
 </script>
