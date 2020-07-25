@@ -16,18 +16,13 @@
       </view>
     </view>
     <view class="Main">
-      <view class="List" v-for="cook in cooks" :key="cook.key">
-        <view class="My_list">
-          <text>{{ cook.message }}</text>
-        </view>
-        <view class="Serving">
-          <text-input v-model="number" type="number" />
-        </view>
-        <view class="CheckBox">
-          <nb-checkbox :checked="cook.checked" :on-press="() => cook.checked = !cook.checked"></nb-checkbox>
-        </view>
+      <text>aaaa</text>
+      <!-- <view class="List" v-for="cook in cooks" :key="cook.key">
+        <view class="My_list"></view>
+        <view class="Serving"></view>
+        <view class="CheckBox"></view>
         <view class="Look_nutrition"></view>
-      </view>
+      </view> -->
     </view>
     <view class="Last">
       <view class="Add_menu"></view>
@@ -41,10 +36,8 @@ import { Mylist } from "../../../constants/MyList";
 export default {
   data() {
     return {
-      keyword: "",
+      keyword: "aaa",
       cooks: Mylist,
-      number: "0",
-      check_box: "",
     };
   },
   components: {
@@ -80,14 +73,7 @@ export default {
   border-width: 1;
   flex: 1;
 }
-.List {
-  background-color: rgb(174, 228, 230);
-  flex-direction: row;
-  justify-content: center;
-  width: 80%;
-  align-items: center;
-}
-.Serving {
-  background-color: rgb(162, 157, 168);
+.Main {
+  background-color: red;
 }
 </style>
