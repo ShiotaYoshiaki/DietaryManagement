@@ -1,13 +1,14 @@
 <template>
   <view>
-    <CateringSetList :open_func="open_func" :testRecord="testRecord" />
+    <nb-text>MyselfList</nb-text>
+    <MyCateringListModal :open_func="open_func" :testRecord="testRecord" />
   </view>
 </template>
 <script>
-import CateringSetList from "../CateringSetList";
+import MyCateringListModal from "../MyCateringListModal";
 export default {
   components: {
-    CateringSetList,
+    MyCateringListModal,
   },
   props: {
     open_func: {
@@ -19,4 +20,3 @@ export default {
   },
 };
 </script>
-<style scoped></style>
