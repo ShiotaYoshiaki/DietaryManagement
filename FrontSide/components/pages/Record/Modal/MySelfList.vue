@@ -1,19 +1,15 @@
 <template>
   <view>
-    <CateringSetList :open_func="open_func" />
+   <CateringSetList />
   </view>
 </template>
 <script>
 import CateringSetList from "../CateringSetList";
 export default {
-  components: {
+  components:{
     CateringSetList,
-  },
-  props: {
-    open_func: {
-      type: Function,
-    },  
-  },
-};
+  }
+}
 </script>
-<style scoped></style>
+<style scoped>
+</style>
