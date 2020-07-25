@@ -1,6 +1,6 @@
 <template>
   <view>
-    <CateringSetList :open_func="open_func" :testRecord="testRecord" />
+    <CateringSetList :open_func="open_func" />
   </view>
 </template>
 <script>
@@ -12,10 +12,7 @@ export default {
   props: {
     open_func: {
       type: Function,
-    },
-    testRecord: {
-      type: Array,
-    },
+    },  
   },
 };
 </script>

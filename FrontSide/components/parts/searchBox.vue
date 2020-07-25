@@ -6,8 +6,8 @@
       class="text_input"
       :on-change="(e) => changeKeyword(e)"
     />
-    <nb-button class="serchBox_button" :on-press="keywordFunc"
-      ><text class="button_text">検索</text></nb-button
+    <touchable-opacity class="serchBox_button" :on-press="keywordFunc"
+      ><text class="button_text">検索</text></touchable-opacity
     >
   </view>
 </template>
