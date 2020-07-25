@@ -7,7 +7,7 @@
       <MySelfList :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.MY_SELF_SET.key">
-      <MySelfSet :open_func="open_func" :testRecord="testRecord" />
+      <MySelfSet />
     </view>
     <view v-if="param === records.SELL_COOKED.key">
       <SellCooked />

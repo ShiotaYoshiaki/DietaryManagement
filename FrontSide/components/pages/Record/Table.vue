@@ -67,8 +67,7 @@ import { MEALS } from "../../../constants/meals";
 import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
 import Modal from "../../parts/Modal";
 import Controller from "./Modal/Controller";
-import MyCateringListModal from "./MyCateringListModal";
-import MyCateringSetModal from "./MyCateringSetModal";
+import cateringSetList from "./CateringSetList";
 
 export default {
   data: () => {
