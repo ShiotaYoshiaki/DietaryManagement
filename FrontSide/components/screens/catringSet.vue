@@ -11,7 +11,7 @@
     </view>
     <view class="mylist_container">
       <mylist :cooks="cooks"></mylist>
-      <serving class="test"></serving>
+      <serving></serving>
       <LookNutrition></LookNutrition>
       <checkBoxed :confirmedList="confirmedList"></checkBoxed>
     </view>
@@ -81,15 +81,9 @@ export default {
 .mylist_container {
   flex-direction: row;
   padding-top: 20px;
-  /* align-items: center; */
 }
 .sort_container {
-  align-items: center;
   flex-direction: row;
- 
-}
-.test{
-   /* background-color: red; */
-   width: 40;
+  /* background-color: red; */
 }
 </style>

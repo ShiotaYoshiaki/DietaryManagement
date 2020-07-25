@@ -35,7 +35,5 @@ export default {
 <style scoped>
 .checkboxStyle {
   background-color: rgb(108, 202, 187);
-  transform: scale(1.8);
-  margin-top: 25;
 }
 </style>
