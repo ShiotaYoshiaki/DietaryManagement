@@ -37,6 +37,9 @@
         <touchable-opacity :on-press="addFunc">
           <text>献立に追加</text>
         </touchable-opacity>
+        <touchable-opacity :on-press="() =>(is_active = !is_active)">
+          <text>test</text>
+        </touchable-opacity>
       </view>
     </view>
   </view>
@@ -45,6 +48,7 @@
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
 import { Mylist } from "../../../constants/MyList";
+import Modal from "../../parts/Modal";
 export default {
   data() {
     return {
@@ -56,6 +60,7 @@ export default {
   },
   components: {
     MaterialIcons,
+    Modal,
   },
   props: {
     open_func: {
@@ -76,7 +81,6 @@ export default {
         return filterValue;
       });
       console.log("ここからemit");
-      this.open_func();
     },
   },
 };
