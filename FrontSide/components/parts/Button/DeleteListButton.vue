@@ -9,10 +9,14 @@
 
 <script>
 export default {
-  props: [recipe],
+  props: {
+    recipeMessage: {
+      type: String,
+    },
+  },
   methods: {
     deleteElement(e) {
-      
+      console.log("======");
     }
   }
 };

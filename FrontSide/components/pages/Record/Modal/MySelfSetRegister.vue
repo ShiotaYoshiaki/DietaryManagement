@@ -3,6 +3,10 @@
   <view>
     <MenuNameTextbox></MenuNameTextbox>
     <MenuList :menu="menu"></MenuList>
+    <view class="flex">
+      <LookNutritionButton></LookNutritionButton>
+      <MenuRegisterButton></MenuRegisterButton>
+    </view>
   </view>
 </template>
 
@@ -10,7 +14,7 @@
 import MenuNameTextbox from "../../../parts/Textbox/MenuNameTextbox";
 import MenuList from "../../../parts/List/MenuList";
 import MenuRegisterButton from "../../../parts/Button/MenuRegisterButton";
-import LookNutritionListButton from "../../../parts/Button/LookNutritionListButton";
+import LookNutritionButton from "../../../parts/Button/LookNutritionButton";
 import { EMPTY_RECIPE } from "../../../../constants/Records"
 
 export default {
@@ -18,7 +22,7 @@ export default {
     MenuNameTextbox,
     MenuList,
     MenuRegisterButton,
-    LookNutritionListButton,
+    LookNutritionButton,
   },
   data: () => {
     return {
@@ -28,4 +32,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+.flex {
+  flex-direction: row;
+}
+
+</style>

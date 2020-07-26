@@ -1,8 +1,8 @@
-// マイ自炊セット登録の「登録」ボタン
+// マイ自炊セット登録の「栄養素を見る」ボタン
 <template>
   <view>
     <nb-button block bordered :on-press="addMenuFunc">
-      <text>マイ自炊セットに登録</text>
+      <text>栄養素を見る</text>
     </nb-button>
   </view>
 </template>

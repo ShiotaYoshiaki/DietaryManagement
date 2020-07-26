@@ -4,9 +4,9 @@
     <view class="list_title">
       <text>献立リスト</text>
     </view>
-    <view v-for="recipe in menu" :key="recipe.key">
+    <view v-for="recipe in menu" :key="recipe.key" class="flex">
       <nb-text class="recipe">{{ recipe.message }}</nb-text>
-      <DeleteListButton :recipe="recipe"></DeleteListButton>
+      <DeleteListButton :recipeMessage="recipe.message"></DeleteListButton>
     </view>
   </view>
 </template>
@@ -19,6 +19,14 @@ export default {
       type: Array,
     },
   },
+  methods: {
+    con() {
+      console.log("=======");
+    }
+  },
+  components: {
+    DeleteListButton,
+  },
 };
 </script>
 
@@ -26,4 +34,9 @@ export default {
 .recipe {
   font-size: 12;
 }
+
+.flex {
+  flex-direction: row;
+}
+
 </style>
