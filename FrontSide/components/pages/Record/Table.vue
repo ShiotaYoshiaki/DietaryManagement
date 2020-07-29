@@ -87,7 +87,6 @@ export default {
   },
 };
 </script>
-
 <style>
 .container {
   align-items: center;
