@@ -8,11 +8,22 @@ import {
   createStackNavigator,
 } from "vue-native-router";
 import * as Stack from "../routes/Stack";
+import SignUp from "../components/pages/Login/SignUp";
 
-const StackNavigator = createStackNavigator(Stack.default);
-const AppNavigator = createAppContainer(StackNavigator);
+const AppNavigator = createAppContainer(
+  createStackNavigator(
+    {
+      BottomTab: { screen: Stack },
+      SignUp: { screen: SignUp },
+    },
+    {
+      initialRouteName: "BottomTab"
+    }
+  )
+);
 
 export default {
   components: { AppNavigator },
 };
+
 </script>
