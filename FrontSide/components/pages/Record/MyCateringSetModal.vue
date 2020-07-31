@@ -18,7 +18,7 @@
     <view class="Main">
       <view class="List" v-for="cook in cooks" :key="cook.key">
         <view class="My_list">
-          <text>{{ cook.message }}</text>
+          <text>{{ cook.SetMenu }}</text>
         </view>
         <view class="Serving">
           <text-input v-model="number" type="number" />
@@ -49,12 +49,12 @@
 
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
-import { Mylist } from "../../../constants/MyList";
+import { MyList } from "../../../constants/MyList";
 export default {
   data() {
     return {
       keyword: "",
-      cooks: Mylist,
+      cooks: MyList,
       number: "0",
       check_box: "",
     };
@@ -91,22 +91,29 @@ export default {
           return cook.message === param;
         });
       });
-        this.cooks = sortedCooks;
+      this.cooks = sortedCooks;
     },
     addFunc() {
       const boolemAdd = this.cooks.filter((value) => {
         const filterValue = value.checked;
         return filterValue;
       });
+      const mapedBoolemAdd = boolemAdd.map((value) => {
+        const pushObject = {};
+        const Data = value.data.map((element) => {
+          pushObject.message = element;
+        });
+        return pushObject;
+      });
       let testRecordLength = this.testRecord.length + 1;
-      boolemAdd.forEach((element) => {
+      mapedBoolemAdd.forEach((element) => {
         this.testRecord.push(element);
       });
       this.open_func();
     },
     Look_nutritionFunc() {
       console.log("ここを押すと栄養素一覧は飛びます");
-    }
+    },
   },
 };
 </script>

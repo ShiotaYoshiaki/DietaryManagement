@@ -1,14 +1,14 @@
 <template>
   <view>
-    <nb-text>MyselfList</nb-text>
-    <MyCateringListModal :open_func="open_func" :testRecord="testRecord" />
+    <nb-text>マイ自炊レシピです</nb-text>
+    <MyCateringRecipeModal :open_func="open_func" :testRecord="testRecord" />
   </view>
 </template>
 <script>
-import MyCateringListModal from "../MyCateringListModal";
+import MyCateringRecipeModal from "../MyCateringRecipeModal";
 export default {
   components: {
-    MyCateringListModal,
+    MyCateringRecipeModal,
   },
   props: {
     open_func: {

@@ -49,12 +49,12 @@
 
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
-import { Mylist } from "../../../constants/MyList";
+import { MyRecipe } from "../../../constants/MyRecipe";
 export default {
   data() {
     return {
       keyword: "",
-      cooks: Mylist,
+      cooks: MyRecipe,
       number: "0",
       check_box: "",
     };

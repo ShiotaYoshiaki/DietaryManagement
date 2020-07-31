@@ -1,6 +1,6 @@
 <template>
   <view>
-    <text>MySelfSet</text>
+    <text>マイ自炊セットです</text>
     <MyCateringSetModal :open_func="open_func" :testRecord="testRecord" />
   </view>
 </template>
