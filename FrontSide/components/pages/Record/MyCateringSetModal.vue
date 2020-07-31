@@ -100,12 +100,12 @@ export default {
       });
       const mapedBoolemAdd = boolemAdd.map((value) => {
         const pushObject = {};
-        const Data = value.data.map((element) => {
+        value.data.forEach((element) => {
           pushObject.message = element;
         });
         return pushObject;
       });
-      let testRecordLength = this.testRecord.length + 1;
+      console.log(mapedBoolemAdd);
       mapedBoolemAdd.forEach((element) => {
         this.testRecord.push(element);
       });

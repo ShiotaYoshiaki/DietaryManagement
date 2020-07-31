@@ -98,7 +98,6 @@ export default {
         const filterValue = value.checked;
         return filterValue;
       });
-      let testRecordLength = this.testRecord.length + 1;
       boolemAdd.forEach((element) => {
         this.testRecord.push(element);
       });

@@ -1,5 +1,5 @@
 export const MyRecipe = [
-  {
+  { 
     key: 1,
     message: "野菜炒め",
     checked: true,
