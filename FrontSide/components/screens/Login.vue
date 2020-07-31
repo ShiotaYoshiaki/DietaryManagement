@@ -5,6 +5,9 @@
     <nb-button block primary :on-press="openItem">
       <nb-text>Login</nb-text>
     </nb-button>
+    <nb-button block primary :onPress="() => this.props.navigation.navigate(listItemArr[0].route)">
+      <nb-text>Sign up</nb-text>
+    </nb-button>
     <Modal :is_active="isModalActive" :open_func="openItem">
       <Login />
     </Modal>
@@ -18,7 +21,13 @@ import Login from "../pages/Login/Index";
 export default {
   data: () => {
     return {
-      isModalActive: false
+      isModalActive: false,
+      listItemArr: [
+        {
+          route: "SignUp",
+          text: "Sign up"
+        },
+      ]
     };
   },
   components: { Modal, Login },
