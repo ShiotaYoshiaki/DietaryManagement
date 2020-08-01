@@ -1,0 +1,5 @@
+{
+  "name": "Account",
+  "port": 3100,
+  "route": "/api/account"
+}
