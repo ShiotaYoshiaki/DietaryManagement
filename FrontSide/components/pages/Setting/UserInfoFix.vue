@@ -9,7 +9,9 @@
     <nb-content padder>
       <nb-form>
         <nb-item>
-          <nb-input placeholder="メールアドレス" />
+          <nb-input>
+            {{ user.mail }}
+          </nb-input>
         </nb-item>
         <nb-item>
           <nb-input
@@ -29,36 +31,53 @@
         </nb-item>
 
         <nb-item>
-          <nb-input placeholder="ユーザーネーム" />
+          <nb-input>
+            {{ user.username }}
+          </nb-input>
         </nb-item>
 
-        <view class="flex">
+        <view class="flex" :style="stylesObj.marginRight">
           <nb-card-item :style="stylesObj.birthDay">
             <nb-text>生年月日</nb-text>
           </nb-card-item>
-          <nb-item class="flex1">
-            <nb-input placeholder="年" />
+          <nb-item class="flex14">
+            <nb-input>
+              {{ user.birthday.year }}
+            </nb-input>
+            <nb-text>年</nb-text>
           </nb-item>
           <nb-item class="flex1">
-            <nb-input placeholder="月" />
+            <nb-input>
+              {{ user.birthday.month }}
+            </nb-input>
+            <nb-text>月</nb-text>
           </nb-item>
           <nb-item class="flex1">
-            <nb-input placeholder="日" />
+            <nb-input>
+              {{ user.birthday.day }}
+            </nb-input>
+            <nb-text>日</nb-text>
           </nb-item>
         </view>
 
         <nb-item class="flex w110">
-          <nb-input placeholder="身長" class="weightHeight" />
+          <nb-input>
+            {{ user.height }}
+          </nb-input>
           <nb-text class="flex1">cm</nb-text>
         </nb-item>
 
         <nb-item class="flex w110">
-          <nb-input placeholder="体重" class="weightHeight" />
+          <nb-input>
+            {{ user.weight }}
+          </nb-input>
           <nb-text class="flex1">kg</nb-text>
         </nb-item>
 
         <nb-item class="w110">
-          <nb-input placeholder="性別" />
+          <nb-input>
+            {{ user.sex }}
+          </nb-input>
         </nb-item>
       </nb-form>
 
@@ -70,19 +89,25 @@
 </template>
 
 <script>
+import { TEST_USER } from "../../../constants/TestUserInfo";
+
 export default {
   data() {
     return {
+      user: TEST_USER,
       stylesObj: {
         birthDay: {
-          alignItems: 'center',
+          alignItems: "center",
           height: 50,
-          justifyContents: 'center'
+          justifyContents: "center",
         },
-      }
+        marginRight: {
+          marginRight: 40,
+        },
+      },
     };
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -92,6 +117,10 @@ export default {
 
 .flex1 {
   flex: 1;
+}
+
+.flex14 {
+  flex: 1.4;
 }
 
 .weightHei0ght {

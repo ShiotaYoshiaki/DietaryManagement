@@ -33,18 +33,21 @@
           <nb-input placeholder="ユーザーネーム" />
         </nb-item>
 
-        <view class="flex">
+        <view class="flex" :style="stylesObj.marginRight">
           <nb-card-item :style="stylesObj.birthDay">
             <nb-text>生年月日</nb-text>
           </nb-card-item>
-          <nb-item class="flex1">
-            <nb-input placeholder="年" />
+          <nb-item class="flex14">
+            <nb-input />
+            <nb-text>年</nb-text>
           </nb-item>
           <nb-item class="flex1">
-            <nb-input placeholder="月" />
+            <nb-input />
+            <nb-text>月</nb-text>
           </nb-item>
           <nb-item class="flex1">
-            <nb-input placeholder="日" />
+            <nb-input />
+            <nb-text>日</nb-text>
           </nb-item>
         </view>
 
@@ -76,14 +79,17 @@ export default {
     return {
       stylesObj: {
         birthDay: {
-          alignItems: 'center',
+          alignItems: "center",
           height: 50,
-          justifyContents: 'center'
+          justifyContents: "center",
         },
-      }
+        marginRight: {
+          marginRight: 40,
+        },
+      },
     };
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -93,6 +99,10 @@ export default {
 
 .flex1 {
   flex: 1;
+}
+
+.flex14 {
+  flex: 1.4;
 }
 
 .weightHei0ght {
