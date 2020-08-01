@@ -22,8 +22,6 @@ async function getTargetUser(name) {
 
 function toIsMatchPass(userInfo, pass) {
   const { pass: targetPass } = userInfo;
-  console.log(userInfo.pass);
-  console.log(pass);
   return targetPass === pass;
 }
 
