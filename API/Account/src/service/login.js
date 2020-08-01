@@ -48,7 +48,7 @@ export default async (param) => {
   } catch (e) {
     return {
       result: "failed",
-      message: e,
+      message: e.message,
       conform: false,
     };
   }
