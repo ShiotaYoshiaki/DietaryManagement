@@ -15,13 +15,9 @@ export default {
     },
   },
   methods: {
-    deleteElement(e) {
-      console.log("======");
-    }
+    deleteElement: (e) => {
+      return  alert("このボタンが押されたときにこのメニューが削除されます。");
+    },
   }
 };
 </script>
-
-<style modules>
-
-</style>

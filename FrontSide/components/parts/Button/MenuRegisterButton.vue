@@ -10,11 +10,10 @@
 <script>
 export default {
   methods: {
-      addMenuFunc: function () {
-      return  alert("このボタンが押されたときに献立に追加します");
+      addMenuFunc: () => {
+      return  alert("このボタンが押されたときにマイ自炊セットに登録します");
       },
     },
 };
 </script>
 
-<style modules></style>

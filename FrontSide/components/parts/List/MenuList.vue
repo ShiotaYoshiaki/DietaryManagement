@@ -20,9 +20,7 @@ export default {
     },
   },
   methods: {
-    con() {
-      console.log("=======");
-    }
+    
   },
   components: {
     DeleteListButton,

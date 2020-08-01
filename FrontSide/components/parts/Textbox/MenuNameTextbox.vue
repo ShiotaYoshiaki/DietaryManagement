@@ -10,11 +10,6 @@
   </view>
 </template>
 
-<script>
-export default {
-  
-}
-</script>
 
 <style modules>
 .flex {
@@ -23,10 +18,6 @@ export default {
 
 .mt10 {
   margin-top: 10px;
-}
-
-.menuName {
-  
 }
 
 .menuNameTextbox {

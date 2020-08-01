@@ -51,10 +51,6 @@ export default {
   padding-bottom: 16;
 }
 
-/* .c_modal {
-  
-} */
-
 .l_close_button {
   position: absolute;
   background-color: red;

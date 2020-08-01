@@ -10,11 +10,9 @@
 <script>
 export default {
   methods: {
-      addMenuFunc: function () {
-      return  alert("このボタンが押されたときに献立に追加します");
+      addMenuFunc: () => {
+      return  alert("このボタンが押されたときに栄養素画面に移動します");
       },
     },
 };
 </script>
-
-<style modules></style>
