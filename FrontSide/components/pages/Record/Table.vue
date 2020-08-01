@@ -29,22 +29,13 @@
             <view class="c_recipi_label">
               <text>朝食の献立</text>
             </view>
-
-            <scroll-view
-              :content-container-style="{
-                contentContainer: {
-                  paddingVertical: 20,
-                },
-              }"
+            <view
+              class="c_recipi_history"
+              v-for="record in testRecord"
+              :key="record.key"
             >
-              <view
-                class="c_recipi_history"
-                v-for="record in testRecord"
-                :key="record.key"
-              >
-                <text>{{ record.message }}</text>
-              </view>
-            </scroll-view>
+              <text>{{ record.message }}</text>
+            </view>
             <view>
               <text>マイ自炊セットに登録</text>
             </view>
@@ -53,11 +44,7 @@
       </view>
     </view>
     <Modal :is_active="isModalActive" :open_func="openItem">
-      <Controller
-        :param="modalContent"
-        :open_func="openItem"
-        :testRecord="testRecord"
-      />
+      <Controller :param="modalContent" />
     </Modal>
   </view>
 </template>
@@ -102,7 +89,6 @@ export default {
   },
 };
 </script>
-
 <style>
 .container {
   align-items: center;

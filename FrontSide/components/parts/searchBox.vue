@@ -1,11 +1,6 @@
 <template>
   <view class="seachBox">
-    <text-input
-      placeholder="検索欄"
-      v-model="keyword"
-      class="text_input"
-      :on-change="(e) => changeKeyword(e)"
-    />
+    <text-input placeholder="検索欄" v-model="keyword" class="text_input" />
     <touchable-opacity class="serchBox_button" :on-press="keywordFunc"
       ><text class="button_text">検索</text></touchable-opacity
     >
@@ -52,7 +47,6 @@ export default {
   background-color: white;
   margin-right: 5px;
   flex: 3;
-
   width: 100%;
 }
 .button_text {

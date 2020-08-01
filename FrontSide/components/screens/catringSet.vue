@@ -5,7 +5,10 @@
         :cooks="cooks"
         :test="test"
         :keyword="keyword"
+<<<<<<< HEAD
         :changeKeyword="changeKeyword"
+=======
+>>>>>>> develop
         @serchFunc="changelist"
       ></seachBox>
       <sort @changeCooks="ChangedCooks"></sort>
