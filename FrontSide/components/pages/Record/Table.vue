@@ -44,7 +44,7 @@
       </view>
     </view>
     <Modal :is_active="isModalActive" :open_func="openItem">
-      <Controller :param="modalContent" />
+      <Controller :param="modalContent" :open_func="openItem" :testRecord="testRecord" />
     </Modal>
   </view>
 </template>

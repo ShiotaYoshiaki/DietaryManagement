@@ -24,7 +24,7 @@
           <text-input v-model="number" type="number" />
           <text>人前</text>
         </view>
-        <view class="CheckBox">
+        <view class="checkBox">
           <nb-checkbox
             :checked="cook.checked"
             :on-press="() => (cook.checked = !cook.checked)"
@@ -155,7 +155,7 @@ nb-button {
   flex: 2;
   flex-direction: row;
 }
-.CheckBox {
+.checkBox {
   flex: 2;
 }
 .Look_nutrition {

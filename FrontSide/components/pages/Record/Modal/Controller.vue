@@ -4,10 +4,10 @@
       <NewMySelf />
     </view>
     <view v-if="param === records.MY_SELF_RECIPE.key">
-      <MySelfList />
+      <MySelfList :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.MY_SELF_SET.key">
-      <MySelfSet />
+      <MySelfSet :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.SELL_COOKED.key">
       <SellCooked />
@@ -38,6 +38,12 @@ export default {
     param: {
       type: String,
       default: "test",
+    },
+    open_func: {
+      type: Function,
+    },
+    testRecord: {
+      type: Array,
     },
   },
 };
