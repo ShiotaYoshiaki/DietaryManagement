@@ -15,6 +15,7 @@ import Nutrients from "../components/screens/Nutrients.vue";
 import Settings from "../components/screens/Settings.vue";
 import Login from "../components/screens/Login.vue";
 import SignUp from "../components/pages/Login/SignUp";
+import UserInfoFix from "../components/pages/Setting/UserInfoFix";
 
 const BottomTab = createBottomTabNavigator(
   {
@@ -31,6 +32,7 @@ const AppNavigator = createAppContainer(
     {
       BottomTab: { screen: BottomTab },
       SignUp: { screen: SignUp },
+      UserInfoFix: { screen: UserInfoFix },
     },
     {
       initialRouteName: "BottomTab"

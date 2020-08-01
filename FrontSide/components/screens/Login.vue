@@ -5,7 +5,11 @@
     <nb-button block primary :on-press="openItem">
       <nb-text>Login</nb-text>
     </nb-button>
-    <nb-button block primary :onPress="() => this.props.navigation.navigate(listItemArr[0].route)">
+    <nb-button
+      block
+      primary
+      :onPress="() => this.props.navigation.navigate(listItemArr[0].route)"
+    >
       <nb-text>Sign up</nb-text>
     </nb-button>
     <Modal :is_active="isModalActive" :open_func="openItem">
@@ -25,9 +29,9 @@ export default {
       listItemArr: [
         {
           route: "SignUp",
-          text: "Sign up"
+          text: "Sign up",
         },
-      ]
+      ],
     };
   },
   components: { Modal, Login },
@@ -44,11 +48,10 @@ export default {
      */
     toggleModal() {
       this.isModalActive = !this.isModalActive;
-    }
-  }
+    },
+  },
 };
 </script>
-
 
 <style>
 .container {
