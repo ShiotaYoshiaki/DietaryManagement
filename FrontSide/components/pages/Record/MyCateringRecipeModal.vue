@@ -86,10 +86,8 @@ export default {
         return cook.message;
       });
       sorted.sort();
-      const sortedCooks = sorted.map((param) => {
-        return this.cooks.find((cook) => {
-          return cook.message === param;
-        });
+      const sortedCooks = sorted.map(param => {
+        this.cooks.find(cook =>  cook.message === param)
       });
         this.cooks = sortedCooks;
     },
