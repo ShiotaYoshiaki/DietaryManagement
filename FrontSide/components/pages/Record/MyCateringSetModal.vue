@@ -1,4 +1,4 @@
-<template>
+t<template>
   <view>
     <view class="Top">
       <view class="SerchBox">
@@ -27,7 +27,7 @@
         <view class="checkbox">
           <nb-checkbox
             :checked="cook.checked"
-            :on-press="() => (cook.checked = !cook.checked)"
+            :on-press="() => checkboxFunc(cook.key)"
           ></nb-checkbox>
         </view>
         <view class="Look_nutrition">
@@ -81,6 +81,10 @@ export default {
       });
       this.cooks = searched;
     },
+    checkboxFunc(value) {
+      const confirm = this.cooks.find((element) => element.key === value);
+      confirm.checked = !confirm.checked;
+    },
     changeSort() {
       const sorted = this.cooks.map((cook) => {
         return cook.message;
@@ -98,17 +102,19 @@ export default {
         const filterValue = value.checked;
         return filterValue;
       });
-      const mapedBoolemAdd = boolemAdd.map((value) => {
-        const pushObject = {};
-        value.data.forEach((element) => {
-          pushObject.message = element;
+      const nextCooks = [];
+      boolemAdd.forEach((each) => {
+        const { data } = each;
+        data.forEach((param) => {
+          const reportData = {};
+          reportData.message = param;
+          nextCooks.push(reportData);
         });
-        return pushObject;
       });
-      console.log(mapedBoolemAdd);
-      mapedBoolemAdd.forEach((element) => {
-        this.testRecord.push(element);
-      });
+      console.log(nextCooks);
+      // mapedBoolemAdd.forEach((element) => {
+      //   this.testRecord.push(element);
+      // });
       this.open_func();
     },
     Look_nutritionFunc() {
