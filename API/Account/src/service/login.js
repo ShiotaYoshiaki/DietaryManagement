@@ -22,7 +22,11 @@ async function getTargetUser(name) {
 
 function toIsMatchPass(userInfo, pass) {
   const { pass: targetPass } = userInfo;
-  return targetPass === pass;
+  const isMatch = targetPass === pass;
+  if (!isMatch) {
+    console.log(`Unexpected pass. pass: ${pass}`);
+  }
+  return isMatch;
 }
 
 async function login(param) {
