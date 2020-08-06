@@ -2,9 +2,18 @@
   <view class="container">
     <text class="heading">Nutrients</text>
     <text>This is the App Nutrients screen</text>
+    <test></test>
   </view>
 </template>
 
+<script>
+import test from "../parts/test";
+export default {
+  components: {
+    test,
+  },
+};
+</script>
 <style>
 .container {
   align-items: center;
