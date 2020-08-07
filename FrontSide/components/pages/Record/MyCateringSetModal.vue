@@ -1,7 +1,7 @@
 t<template>
   <view>
-    <view class="Top">
-      <view class="SerchBox">
+    <view class="top">
+      <view class="serchBox">
         <text-input v-model="keyword" :on-change="(e) => changeKeyword(e)" />
       </view>
       <view class="serch">
@@ -9,18 +9,18 @@ t<template>
           <text>検索</text>
         </nb-button>
       </view>
-      <view class="Sort">
+      <view class="sort">
         <nb-button :on-press="changeSort">
           <MaterialIcons name="sort" size="40" color="black" />
         </nb-button>
       </view>
     </view>
-    <view class="Main">
-      <view class="List" v-for="cook in cooks" :key="cook.key">
-        <view class="My_list">
+    <view class="main">
+      <view class="list" v-for="cook in cooks" :key="cook.key">
+        <view class="my_list">
           <text>{{ cook.SetMenu }}</text>
         </view>
-        <view class="Serving">
+        <view class="serving">
           <text-input v-model="number" type="number" />
           <text>人前</text>
         </view>
@@ -30,15 +30,15 @@ t<template>
             :on-press="() => checkboxFunc(cook.key)"
           ></nb-checkbox>
         </view>
-        <view class="Look_nutrition">
-          <nb-button :on-press="Look_nutritionFunc">
+        <view class="look_nutrition">
+          <nb-button :on-press="look_nutritionFunc">
             <text>栄養素を見る</text>
           </nb-button>
         </view>
       </view>
     </view>
-    <view class="Last">
-      <view class="Add_menu">
+    <view class="last">
+      <view class="add_menu">
         <nb-button :on-press="addFunc">
           <text>献立に追加</text>
         </nb-button>
@@ -111,13 +111,12 @@ export default {
           nextCooks.push(reportData);
         });
       });
-      console.log(nextCooks);
-      // mapedBoolemAdd.forEach((element) => {
-      //   this.testRecord.push(element);
-      // });
+      nextCooks.forEach((element) => {
+        this.testRecord.push(element);
+      });
       this.open_func();
     },
-    Look_nutritionFunc() {
+    look_nutritionFunc() {
       console.log("ここを押すと栄養素一覧は飛びます");
     },
   },
@@ -128,14 +127,14 @@ export default {
 nb-button {
   background-color: antiquewhite;
 }
-.Top {
+.top {
   background-color: rgb(174, 228, 230);
   flex-direction: row;
   justify-content: center;
   width: 80%;
   align-items: center;
 }
-.SerchBox {
+.serchBox {
   border-width: 1;
   flex: 5;
 }
@@ -144,17 +143,17 @@ nb-button {
   flex: 1;
   margin-left: 0.5;
 }
-.Sort {
+.sort {
   margin-left: 5;
   border-width: 1;
   flex: 1;
 }
-.Main {
+.main {
   width: 100%;
   border-width: 1;
   margin-top: 1;
 }
-.List {
+.list {
   background-color: rgb(174, 228, 230);
   flex-direction: row;
   justify-content: center;
@@ -162,24 +161,24 @@ nb-button {
   align-items: center;
   border-bottom-width: 1;
 }
-.My_list {
+.my_list {
   flex: 3;
 }
-.Serving {
+.serving {
   flex: 2;
   flex-direction: row;
 }
 .checkbox {
   flex: 2;
 }
-.Look_nutrition {
+.look_nutrition {
   flex: 2;
 }
-.Last {
+.last {
   justify-content: flex-end;
   flex-direction: row;
 }
-.Add_menu {
+.add_menu {
   margin-top: 1;
   width: 25%;
 }
