@@ -15,4 +15,5 @@ const AppNavigator = createAppContainer(StackNavigator);
 export default {
   components: { AppNavigator },
 };
+
 </script>
