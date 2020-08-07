@@ -6,9 +6,14 @@
 
 <script>
 export default {
+  props: {
+    recipe: {
+      type: Object,
+    },
+  },
   methods: {
     deleteListItem() {
-      this.$emit("deleteItem");
+      this.$emit("deleteItem",this.recipe);
     },
   },
 };

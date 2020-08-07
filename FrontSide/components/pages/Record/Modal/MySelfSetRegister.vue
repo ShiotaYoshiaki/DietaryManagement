@@ -8,18 +8,19 @@
       <nb-list-item
         v-for="recipe in menu"
         :key="recipe.key"
-        class="flexbox"
         :style="stylesObj.listItem"
       >
-        <MenuListItem 
-          :style="{ flex: 4 }"
-          :recipeMessage="recipe.message"
-        />
-        <DeleteListButton
-          :style="{ flex: 1 }"
-          :recipeBool="recipe.bool"
-          @deleteItem="deleteItemFunc"
-        />
+        <nb-body class="flexbox" v-if="recipe.bool">
+          <MenuListItem 
+            :recipeMessage="recipe.message"
+            :style="stylesObj.menuName"
+          />
+          <DeleteListButton
+            :recipe="recipe"
+            @deleteItem="deleteItemFunc"
+            :style="stylesObj.deleteButton"
+          />
+        </nb-body>
       </nb-list-item>
     </nb-list>
     <view class="flexbox" :style="stylesObj.twoButton">
@@ -36,6 +37,7 @@ import MenuRegisterButton from "../../../parts/Button/MenuRegisterButton";
 import LookNutritionButton from "../../../parts/Button/LookNutritionButton";
 import DeleteListButton from "../../../parts/Button/DeleteListButton";
 import { EMPTY_RECIPE } from "../../../../constants/Records";
+import { Content } from 'native-base';
 
 export default {
   components: {
@@ -76,12 +78,20 @@ export default {
         button2: {
           width: 140,
         },
+        menuName: {
+          width: 220,
+          paddingLeft: 2,
+          marginLeft: 2,
+        },
+        deleteButton: {
+          width: 48,
+        },
       },
     };
   },
   methods: {
-    deleteItemFunc() {
-      return alert("このボタンが押されたときにマイ自炊セットに登録します");
+    deleteItemFunc(recipe) {
+      this.menu.find((m) => m.key === recipe.key).bool = !this.menu.find((m) => m.key === recipe.key).bool;
     },
   },
 };
