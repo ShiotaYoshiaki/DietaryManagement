@@ -6,7 +6,7 @@
     </view>
     <view v-for="recipe in menu" :key="recipe.key" class="flex">
       <nb-text class="recipe">{{ recipe.message }}</nb-text>
-      <DeleteListButton :recipeMessage="recipe.message"></DeleteListButton>
+      <delete-list-button :recipeMessage="recipe"></delete-list-button>
     </view>
   </view>
 </template>

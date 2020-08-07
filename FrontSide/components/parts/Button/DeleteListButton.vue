@@ -11,7 +11,7 @@
 export default {
   props: {
     recipeMessage: {
-      type: String,
+      type: Object,
     },
   },
   methods: {
