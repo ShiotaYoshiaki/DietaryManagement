@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <view v-if="is_active" class="l_back_modal">
     <view class="l_modal">
