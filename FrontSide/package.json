@@ -21,7 +21,8 @@
     "vue-native-core": "0.1.4",
     "vue-native-helper": "0.1.4",
     "vue-native-router": "0.1.1",
-    "vue-native-scripts": "0.1.4"
+    "vue-native-scripts": "0.1.4",
+    "vue-select": "^3.10.7"
   },
   "devDependencies": {
     "babel-preset-expo": "8.1.0",
