@@ -1,21 +1,23 @@
 <template>
   <view>
     <view class="sort_container">
-      <seachBox></seachBox>
+      <seachBox
+        :cooks="cooks"
+        :test="test"
+        :keyword="keyword"
+        @serchFunc="changelist"
+      ></seachBox>
       <sort @changeCooks="ChangedCooks"></sort>
     </view>
-
     <view class="mylist_container">
       <mylist :cooks="cooks"></mylist>
       <serving></serving>
       <LookNutrition></LookNutrition>
       <checkBoxed :confirmedList="confirmedList"></checkBoxed>
     </view>
-
     <addmenu></addmenu>
   </view>
 </template>
-
 <script>
 import seachBox from "../parts/searchBox";
 import LookNutrition from "../parts/LookNutrition/LookNutrition";
@@ -41,6 +43,8 @@ export default {
     return {
       cooks: Mylist,
       confirmedList: confirmedList,
+      keyword: "aaaa",
+      test: [],
     };
   },
   methods: {
@@ -53,7 +57,22 @@ export default {
         });
       });
       this.cooks = nextcooks;
-      this.$emit("toCateringSet");
+    },
+    changelist() {
+      const messagelist = this.cooks.map((value) => {
+        const list = value.message;
+        return list;
+      });
+      let cooksList = messagelist.indexOf(this.keyword);
+      if (cooksList == -1) {
+        const changeNextCooks = messagelist.map((param) => {
+          return this.cooks.find((cook) => {
+            return cook.message === param;
+          });
+          this.cooks = changeNextCooks;
+        });
+      }
+      alert("----");
     },
   },
 };
@@ -65,5 +84,6 @@ export default {
 }
 .sort_container {
   flex-direction: row;
+  /* background-color: red; */
 }
 </style>

@@ -1,3 +1,3 @@
 <template>
-  <text>MySelfSet</text>
+  <text>MySelfSet </text>
 </template>
