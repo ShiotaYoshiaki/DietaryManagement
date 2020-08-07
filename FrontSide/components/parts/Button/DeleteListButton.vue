@@ -1,23 +1,19 @@
-// リストに入っている要素を削除するボタン
 <template>
-  <view>
-    <nb-button class="delete_button" :on-press="deleteElement">
-      <text class="delete_mark">×</text>
-    </nb-button>
-  </view>
+  <nb-button danger bordered :on-press="deleteListItem">
+    <nb-icon active name="trash"  />
+  </nb-button>
 </template>
 
 <script>
 export default {
-  props: {
-    recipeMessage: {
-      type: Object,
+  methods: {
+    deleteListItem() {
+      this.$emit("deleteItem");
     },
   },
-  methods: {
-    deleteElement: (e) => {
-      return  alert("このボタンが押されたときにこのメニューが削除されます。");
-    },
-  }
 };
 </script>
+
+<style module>
+
+</style>

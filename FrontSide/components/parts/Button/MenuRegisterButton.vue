@@ -1,19 +1,27 @@
 // マイ自炊セット登録の「登録」ボタン
 <template>
-  <view>
-    <nb-button block bordered :on-press="addMenuFunc">
-      <text>マイ自炊セットに登録</text>
-    </nb-button>
-  </view>
+  <nb-button block bordered dark :on-press="() => addMenuFunc">
+    <nb-text :style="stylesObj.buttonMessage">マイ自炊セットに登録</nb-text>
+  </nb-button>
 </template>
 
 <script>
 export default {
-  methods: {
-      addMenuFunc: () => {
-      return  alert("このボタンが押されたときにマイ自炊セットに登録します");
+  data: () => {
+    return {
+      stylesObj: {
+        buttonMessage: {
+          fontSize: 13,
+          paddingLeft: 0,
+          paddingRight: 0,
+        }
       },
+    };
+  },
+  methods: {
+    addMenuFunc: () => {
+      return alert("このボタンが押されたときにマイ自炊セットに登録します");
     },
+  },
 };
 </script>
-
