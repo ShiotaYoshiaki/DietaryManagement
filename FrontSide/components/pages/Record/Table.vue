@@ -37,7 +37,7 @@
               <text>{{ record.message }}</text>
             </view>
             <view>
-              <text>マイ自炊セットに登録</text>
+              <button :title="register.message" :on-press="() => openItem(register.key)" />
             </view>
           </view>
         </view>
@@ -51,7 +51,7 @@
 
 <script>
 import { MEALS } from "../../../constants/meals";
-import { INPUT_RECIPE, EMPTY_RECIPE } from "../../../constants/Records";
+import { INPUT_RECIPE, EMPTY_RECIPE, MY_SELF_SET_REGISTER } from "../../../constants/Records";
 import Modal from "../../parts/Modal";
 import Controller from "./Modal/Controller";
 
@@ -61,6 +61,7 @@ export default {
       cokked: MEALS,
       recipis: INPUT_RECIPE,
       testRecord: EMPTY_RECIPE,
+      register: MY_SELF_SET_REGISTER,
       isModalActive: false,
       modalContent: "",
     };
@@ -87,7 +88,6 @@ export default {
   },
 };
 </script>
-
 <style>
 .container {
   align-items: center;
