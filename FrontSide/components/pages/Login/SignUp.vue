@@ -38,7 +38,7 @@
             <nb-text>生年月日</nb-text>
           </nb-card-item>
           <nb-item class="flex14">
-            <vSelect :options="testyears" v-model="yearSelected" />
+            
           </nb-item>
           <nb-item class="flex1">
             <nb-input />
@@ -73,16 +73,15 @@
 </template>
 
 <script>
-import vSelect from 'vue-select';
 import { YEAR_SET, MONTH_SET, DAY_SET } from "../../../constants/TestUserInfo";
+
+
 export default {
   data() {
     return {
       years: YEAR_SET,
       months: MONTH_SET,
       days: DAY_SET,
-      yearSelected: null,
-      testyears: "1999",
       stylesObj: {
         birthDay: {
           alignItems: "center",
@@ -95,7 +94,6 @@ export default {
       },
     };
   },
-  components: { vSelect },
 
 };
 </script>
