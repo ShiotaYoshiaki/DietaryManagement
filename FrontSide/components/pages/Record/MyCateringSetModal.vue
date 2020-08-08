@@ -1,4 +1,4 @@
-t<template>
+<template>
   <view>
     <view class="top">
       <view class="serchBox">
