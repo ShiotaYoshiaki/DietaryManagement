@@ -38,7 +38,17 @@
             <nb-text>生年月日</nb-text>
           </nb-card-item>
           <nb-item class="flex14">
-            
+            <nb-picker
+              mode="dropdown"
+              :iosIcon="getIosIcon()"
+              placeholder="年"
+              placeholderStyle="{ color: '#bfc6ea' }"
+              placeholderIconColor="#007aff"
+              :selectedValue="selected1"
+              :onValueChange="onValueChange"
+            >
+              <item v-for="year in years" :key="year.key" label=year.value value= year.key />
+            </nb-picker>
           </nb-item>
           <nb-item class="flex1">
             <nb-input />
@@ -73,8 +83,9 @@
 </template>
 
 <script>
-import { YEAR_SET, MONTH_SET, DAY_SET } from "../../../constants/TestUserInfo";
-
+import React from "react";
+import { Picker, Icon } from "native-base";
+import { YEAR_SET, MONTH_SET, DAY_SET } from "../../../../constants/TestUserInfo";
 
 export default {
   data() {
@@ -82,6 +93,7 @@ export default {
       years: YEAR_SET,
       months: MONTH_SET,
       days: DAY_SET,
+      selected1: "",
       stylesObj: {
         birthDay: {
           alignItems: "center",
@@ -94,7 +106,15 @@ export default {
       },
     };
   },
-
+  components: { Item: Picker.Item },
+  methods: {
+    onValueChange(value) {
+      this.selected1 = value;
+    },
+    getIosIcon() {
+      return <Icon name="ios-arrow-down" />;
+    },
+  },
 };
 </script>
 
