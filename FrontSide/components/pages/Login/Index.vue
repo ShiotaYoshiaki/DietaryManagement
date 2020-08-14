@@ -8,7 +8,7 @@
 <text class="text-color-primary">パスワード</text>
 <textInput type="text" v-model="textInput2"/>
 
-<nb-button>
+<nb-button class ="login-button">
           <text>ログイン</text>
 </nb-button>
 
@@ -20,7 +20,13 @@
 <style>
 .text-color-primary {
   color: blue;
+  font-size:20px;
+  padding-bottom:10px;
+  padding-top:10px;
+}
 
+.login-button{
+  margin-top:30px;
 }
 </style>
 
