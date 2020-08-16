@@ -1,14 +1,14 @@
 import ENTITY from '../constants/entityName.json';
 import Abstract from './abstractRepository';
 
-const TABLE_NAME = ENTITY.USER_INFO;
+const TABLE_NAME = ENTITY.FOOD;
 
 export default class DynamoDB extends Abstract {
-  findByName(name) {
+  findById(id) {
     const params = {
       TableName: TABLE_NAME,
       Key: {
-        name,
+        id,
       },
     };
     return this.get(params);
