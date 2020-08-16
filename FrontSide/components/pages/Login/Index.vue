@@ -1,3 +1,3 @@
 <template>
-    <text>Write me</text>
+  <nb-text>login</nb-text>
 </template>

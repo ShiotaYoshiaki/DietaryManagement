@@ -11,7 +11,7 @@
     </view>
     <view class="ranking_container">
       <view class="lack_ranking">
-        <text>足りていない栄養素TOP3</text>   
+        <text>足りていない栄養素TOP3</text>
         <text class="ranking_border">テスト１</text>
         <text class="ranking_border">テスト２</text>
         <text class="ranking_border">テスト３</text>
@@ -25,15 +25,36 @@
     </view>
     <view class="details_container">
       <nb-text class="checking_nutrients">摂取栄養素を見る</nb-text>
-      <nb-text class="changeing_user_info">ユーザー情報を変更する</nb-text>
+      <nb-button
+        block
+        class="changeing_user_info"
+        :onPress="() => this.props.navigation.navigate(listItemArr[0].route)"
+      >
+        <nb-text>ユーザー情報を変更する</nb-text>
+      </nb-button>
     </view>
-  <view class="home_button">
-    <nb-button class="button_background">
-      <text class="allow_button">&lt;&#60;</text>
-    </nb-button>
-  </view>
+    <view class="home_button">
+      <nb-button class="button_background">
+        <text class="allow_button">&lt;&#60;</text>
+      </nb-button>
+    </view>
   </view>
 </template>
+
+<script>
+export default {
+  data: () => {
+    return {
+      listItemArr: [
+        {
+          route: "UserInfoFix",
+          text: "ユーザー情報を変更する",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style>
 .container {
