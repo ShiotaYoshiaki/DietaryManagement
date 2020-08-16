@@ -44,7 +44,7 @@
       </view>
     </view>
     <Modal :is_active="isModalActive" :open_func="openItem">
-      <Controller :param="modalContent" />
+      <Controller :param="modalContent" :open_func="openItem" :testRecord="testRecord" />
     </Modal>
   </view>
 </template>
@@ -54,6 +54,8 @@ import { MEALS } from "../../../constants/meals";
 import { INPUT_RECIPE, EMPTY_RECIPE, MY_SELF_SET_REGISTER } from "../../../constants/Records";
 import Modal from "../../parts/Modal";
 import Controller from "./Modal/Controller";
+import MyCateringRecipeModal from "./MyCateringRecipeModal";
+import MyCateringSetModal from "./MyCateringSetModal";
 
 export default {
   data: () => {

@@ -4,19 +4,16 @@
       <NewMySelf />
     </view>
     <view v-if="param === records.MY_SELF_RECIPE.key">
-      <MySelfList />
+      <MySelfList :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.MY_SELF_SET.key">
-      <MySelfSet />
+      <MySelfSet :open_func="open_func" :testRecord="testRecord" />
     </view>
     <view v-if="param === records.SELL_COOKED.key">
       <SellCooked />
     </view>
     <view v-if="param === records.COOKPAD.key">
       <CookPad />
-    </view>
-    <view v-if="param === records.MY_SELF_SET_REGISTER.key">
-      <MySelfSetRegister />
     </view>
   </view>
 </template>
@@ -29,19 +26,24 @@ import MySelfList from "./MySelfList";
 import MySelfSet from "./MySelfSet";
 import NewMySelf from "./NewSelfRecipe";
 import SellCooked from "./SellCooked";
-import MySelfSetRegister from "./MySelfSetRegister";
 
 export default {
   data: () => {
     return {
-      records: RECORDS
+      records: RECORDS,
     };
   },
-  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet, MySelfSetRegister },
+  components: { CookPad, NewMySelf, MySelfList, SellCooked, MySelfSet },
   props: {
     param: {
       type: String,
-      default: "test"
+      default: "test",
+    },
+    open_func: {
+      type: Function,
+    },
+    testRecord: {
+      type: Array,
     },
   },
 };
