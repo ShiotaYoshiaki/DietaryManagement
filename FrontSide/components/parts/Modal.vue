@@ -39,8 +39,8 @@ export default {
 }
 
 .l_modal {
-  height: 100;
-  width: 100;
+  height: 500;
+  width: 300;
   background-color: #ffffff;
   opacity: 100;
   min-width: 250;
