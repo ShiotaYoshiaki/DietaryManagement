@@ -4,7 +4,7 @@
   "route": "/api/food",
   "REGION": "ap-northeast-1",
   "DB_ENDPOINT": "dynamodb.ap-northeast-1.amazonaws.com",
-  "ACCESS_KEY_ID": "AKIAQ4DL7NOUEK4ZYH5F",
-  "SECRET_ACCESS_KEY": "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",
+  "ACCESS_KEY_ID": "anything",
+  "SECRET_ACCESS_KEY": "anything",
   "MAX_RETRIES": 3
 }
