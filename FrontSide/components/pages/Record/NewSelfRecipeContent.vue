@@ -57,6 +57,8 @@
             :style="{ width: 120 }"
             :selectedValue="selected"
             :onValueChange="onValueChange"
+            iosHeader	="一つお選びください"
+            headerBackButtonText="戻る"
           >
             <item label="茹でる" value="key0" />
             <item label="揚げる" value="key1" />

@@ -52,4 +52,7 @@ export default {
   background-color: red;
   right: 0;
 }
+.c_modal {
+  width: 100;
+}
 </style>

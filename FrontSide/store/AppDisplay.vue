@@ -16,6 +16,7 @@ import Settings from "../components/screens/Settings.vue";
 import Login from "../components/screens/Login.vue";
 import SignUp from "../components/pages/Login/SignUp";
 import UserInfoFix from "../components/pages/Setting/UserInfoFix";
+import NewSelfRecipe from "../components/pages/Record/Modal/NewSelfRecipe"
 
 const BottomTab = createBottomTabNavigator(
   {
@@ -33,6 +34,7 @@ const AppNavigator = createAppContainer(
       BottomTab: { screen: BottomTab },
       SignUp: { screen: SignUp },
       UserInfoFix: { screen: UserInfoFix },
+      NewSelfRecipe: {screen: NewSelfRecipe}
     },
     {
       initialRouteName: "BottomTab"
