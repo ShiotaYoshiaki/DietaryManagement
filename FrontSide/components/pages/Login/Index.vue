@@ -14,7 +14,7 @@
 export default {
   data: function() {
     return {
-      e - mailadress: '入力',
+      e-mailadress: '入力',
       password: '入力',
     }
   },
