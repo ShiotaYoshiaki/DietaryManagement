@@ -16,6 +16,14 @@ import Settings from "../components/screens/Settings.vue";
 import Login from "../components/screens/Login.vue";
 import SignUp from "../components/pages/Login/SignUp";
 import UserInfoFix from "../components/pages/Setting/UserInfoFix";
+import Table from "../components/pages/Record/Table";
+import NewSelfRecipe from "../components/pages/Record/Modal/NewSelfRecipe";
+import MySelfList from "../components/pages/Record/Modal/MySelfList";
+import MySelfSet from "../components/pages/Record/Modal/MySelfSet";
+import SellCooked from "../components/pages/Record/Modal/SellCooked";
+import CookPad from "../components/pages/Record/Modal/CookPad";
+import MySelfSetRegister from "../components/pages/Record/Modal/MySelfSetRegister";
+
 
 const BottomTab = createBottomTabNavigator(
   {
@@ -33,6 +41,13 @@ const AppNavigator = createAppContainer(
       BottomTab: { screen: BottomTab },
       SignUp: { screen: SignUp },
       UserInfoFix: { screen: UserInfoFix },
+      Table: { screen: Table },
+      newSelfRecipe: { screen: NewSelfRecipe },
+      mySelfRecipe: { screen: MySelfList },
+      mySelfSet: { screen: MySelfSet },
+      sellCooked: { screen: SellCooked },
+      cookPad: { screen: CookPad },
+      mySelfSetRegister: { screen: MySelfSetRegister },
     },
     {
       initialRouteName: "BottomTab"

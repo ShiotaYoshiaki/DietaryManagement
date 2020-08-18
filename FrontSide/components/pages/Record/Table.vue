@@ -4,7 +4,7 @@
       <view class="l_table">
         <view class="l_button_tabs">
           <view
-            v-for="cook in cokked"
+            v-for="cook in cooked"
             :key="cook.key"
             class="l_tab_cook"
             accessibilityRole="button"
@@ -13,39 +13,39 @@
           </view>
         </view>
         <view class="l_content">
-          <view class="l_recipi_button">
+          <view class="l_recipe_button">
             <view
-              class="c_recipi_button"
-              v-for="recipi in recipis"
-              :key="recipi.key"
+              class="c_recipe_button"
+              v-for="recipe in recipes"
+              :key="recipe.key"
             >
               <button
-                :title="recipi.message"
-                :on-press="() => openItem(recipi.key)"
+                :title="recipe.message"
+                :onPress="() => screenTransition(recipe.key)"
               />
             </view>
           </view>
           <view>
-            <view class="c_recipi_label">
-              <text>朝食の献立</text>
+            <view class="c_recipe_label">
+              <text>{{ meal }}の献立</text>
             </view>
             <view
-              class="c_recipi_history"
+              class="c_recipe_history"
               v-for="record in testRecord"
               :key="record.key"
             >
               <text>{{ record.message }}</text>
             </view>
             <view>
-              <button :title="register.message" :on-press="() => openItem(register.key)" />
+              <button :title="register.message" :onPress="() => screenTransition(register.key)" />
             </view>
           </view>
         </view>
       </view>
     </view>
-    <Modal :is_active="isModalActive" :open_func="openItem">
+    <!-- <Modal :is_active="isModalActive" :open_func="openItem">
       <Controller :param="modalContent" :open_func="openItem" :testRecord="testRecord" />
-    </Modal>
+    </Modal> -->
   </view>
 </template>
 
@@ -60,13 +60,18 @@ import MyCateringSetModal from "./MyCateringSetModal";
 export default {
   data: () => {
     return {
-      cokked: MEALS,
-      recipis: INPUT_RECIPE,
+      cooked: MEALS,
+      recipes: INPUT_RECIPE,
       testRecord: EMPTY_RECIPE,
       register: MY_SELF_SET_REGISTER,
       isModalActive: false,
       modalContent: "",
     };
+  },
+  props: {
+    meal: {
+      type: String,
+    },
   },
   components: { Modal, Controller },
   methods: {
@@ -87,6 +92,9 @@ export default {
     changeModalContent(e) {
       this.modalContent = e;
     },
+    screenTransition(e) {
+      this.$emit('transition', e)
+    }
   },
 };
 </script>
@@ -126,21 +134,21 @@ export default {
   flex-direction: row;
 }
 
-.l_recipi_button {
+.l_recipe_button {
   width: 200;
 }
 
-.c_recipi_button {
+.c_recipe_button {
   margin-bottom: 20;
 }
 
-.c_recipi_label {
+.c_recipe_label {
   border-color: #000;
   border-style: solid;
   border-width: 1px;
 }
 
-.c_recipi_history {
+.c_recipe_history {
   border-color: #000;
   border-style: solid;
   border-width: 1px;
