@@ -35,6 +35,7 @@ import Table from "../pages/Record/Table";
 import { MEALS } from "../../constants/meals";
 import React from "react";
 import moment from "moment";
+const now = new Date();
 
 export default {
   components: { Table },
@@ -42,11 +43,11 @@ export default {
     return {
       moment,
       cooked: MEALS,
-      defaultDate: new Date(),
+      defaultDate: now,
       minimumDate: new Date("2020-01-01"),
       maximumDate: new Date("2100-12-31"),
-      chosenDate: new Date(),
-      date: new Date(),
+      chosenDate: now,
+      date: now,
       stylesObj: {
         dateText: {
           color: "#1e90ff",

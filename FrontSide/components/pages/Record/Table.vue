@@ -1,6 +1,5 @@
 <template>
   <nb-container :style="stylesObj.container">
-    
     <nb-list>
       <nb-card-item
         v-for="recipe in recipes"
@@ -9,7 +8,7 @@
       >
         <nb-button
           :onPress="() => screenTransition(recipe.key)"
-          :style="stylesObj.recipeButton"
+          :style="stylesObj.button"
           bordered
         >
           <nb-text :style="stylesObj.recipeButtonMessage">{{
@@ -31,7 +30,7 @@
       </nb-list-item>
       <nb-button
         :onPress="() => screenTransition(register.key)"
-        :style="stylesObj.registerButton"
+        :style="stylesObj.button"
         bordered
       >
         <nb-text>{{ register.message }}</nb-text>
@@ -69,7 +68,7 @@ export default {
           marginLeft: 0,
           marginRight: 0,
         },
-        recipeButton: {
+        button: {
           borderTopWidth: 0,
           borderBottomWidth: 0,
           borderLeftWidth: 0,
@@ -82,14 +81,7 @@ export default {
           flex: 1,
           marginRight: 5,
           paddingBottom: 0,
-          marginBottom: 12
-        },
-        registerButton: {
-          borderTopWidth: 0,
-          borderBottomWidth: 0,
-          borderLeftWidth: 0,
-          borderRightWidth: 0,
-          marginBottom: 0,
+          marginBottom: 12,
         },
       },
     };
