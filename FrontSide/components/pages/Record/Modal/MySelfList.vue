@@ -1,14 +1,24 @@
 <template>
   <view>
-    <text>MySelfList</text>
-   <catringSet></catringSet>
+    <nb-text>マイ自炊レシピです</nb-text>
+    <MyCateringRecipeModal :open_func="open_func" :testRecord="testRecord" />
   </view>
 </template>
 <script>
-import catringSet from "../../../screens/catringSet";
+import MyCateringRecipeModal from "../MyCateringRecipeModal";
 export default {
-  components:{
-    catringSet,
-  }
-}
+  components: {
+    MyCateringRecipeModal,
+  },
+  props: {
+    open_func: {
+      type: Function,
+    },
+    testRecord: {
+      type: Array,
+    },
+  },
+};
 </script>
+<style scoped>
+</style>

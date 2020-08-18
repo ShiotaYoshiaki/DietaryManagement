@@ -39,19 +39,12 @@ export default {
 }
 
 .l_modal {
-  height: 100;
-  width: 100;
   background-color: #ffffff;
   opacity: 100;
-  min-width: 250;
-  min-height: 250;
   padding-top: 32;
   padding-left: 16;
   padding-right: 16;
   padding-bottom: 16;
-}
-
-.c_modal {
 }
 
 .l_close_button {

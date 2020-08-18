@@ -1,22 +1,32 @@
-export const Mylist = [
+export const MyList = [
   {
     key: 1,
-    message: "朝の和定食",
+    SetMenu: "朝の和定食",
+    data:["味噌汁","ご飯","ヨーグルト"],
+    checked: true,
   },
   {
     key: 2,
-    message: "しゃぶしゃぶ",
+    SetMenu: "しゃぶしゃぶ",
+    data:["豚肉","白菜","肉団子"],
+    checked: true,
   },
   {
     key: 3,
-    message: "火曜日定食",
+    SetMenu: "火曜日定食",
+    data:["焼きそば","ご飯","唐揚げ"],
+    checked: true,
   },
   {
     key: 4,
-    message: "簡単昼食",
+    SetMenu: "簡単昼食",
+    data:["ピザ"],
+    checked: true,
   },
   {
     key: 5,
-    message: "いつものおやつ",
+    SetMenu: "いつものおやつ",
+    data:["おかき","せんべい","シャトーブリアン"],
+    checked: true,
   },
 ];
