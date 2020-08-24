@@ -1,20 +1,20 @@
 <template>
-<view class="container">
-  <text class="text-color-primary">メールアドレス</text>
-  <textInput type="text" v-model="e-mailadress" />
-  <text class="text-color-primary">パスワード</text>
-  <textInput type="text" v-model="password" />
-  <nb-button class="login-button">
-    <text>ログイン</text>
-  </nb-button>
-</view>
+  <view class="container">
+    <text class="text-color-primary">メールアドレス</text>
+    <textInput type="text" v-model="emailadress" />
+    <text class="text-color-primary">パスワード</text>
+    <textInput type="text" v-model="password" />
+    <nb-button class="login-button">
+      <text>ログイン</text>
+    </nb-button>
+  </view>
 </template>
 
 <script>
 export default {
   data: function() {
     return {
-      e-mailadress: '入力',
+      emailadress: '入力',
       password: '入力',
     }
   },
