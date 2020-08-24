@@ -6,7 +6,7 @@
 import {
   createAppContainer,
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
 } from "vue-native-router";
 // import Stack from "../routes/Stack";
 import Home from "../components/screens/Home.vue";
@@ -16,17 +16,24 @@ import Settings from "../components/screens/Settings.vue";
 import Login from "../components/screens/Login.vue";
 import SignUp from "../components/pages/Login/SignUp";
 import UserInfoFix from "../components/pages/Setting/UserInfoFix";
-import NewSelfRecipe from "../components/pages/Record/Modal/NewSelfRecipe"
+import NewSelfRecipe from "../components/pages/Record/Modal/NewSelfRecipe";
 
-const BottomTab = createBottomTabNavigator(
-  {
-    Home: Home,
-    Record: Record,
-    Nutrients: Nutrients,
-    Settings: Settings,
-    DemoLogin: Login,
-  }
-);
+const BottomTab = createBottomTabNavigator({
+  Home: Home,
+  Record: Record,
+  Nutrients: Nutrients,
+  Settings: Settings,
+  DemoLogin: Login,
+});
+
+const headerNavigationOptions = {
+  headerStyle: {
+    backgroundColor: 'deepskyblue',
+    marginTop: (Platform.OS === 'android' ? 24 : 0)
+  },
+  headerTitleStyle: { color: 'white' },
+  headerTintColor: 'white',
+};
 
 const AppNavigator = createAppContainer(
   createStackNavigator(
@@ -34,10 +41,22 @@ const AppNavigator = createAppContainer(
       BottomTab: { screen: BottomTab },
       SignUp: { screen: SignUp },
       UserInfoFix: { screen: UserInfoFix },
-      NewSelfRecipe: {screen: NewSelfRecipe}
+      NewSelfRecipe: {
+        screen: NewSelfRecipe,
+        navigationOptions: {
+          title: "NewSelfRecipe",
+          ...headerNavigationOptions,
+          // 反応しない
+          headerBackTitle: "戻る",
+          // headerStyle: {
+          //   backgroundColor: "aqua",
+          // },
+          // headerTintColor: "#aaa",
+        },
+      },
     },
     {
-      initialRouteName: "BottomTab"
+      initialRouteName: "BottomTab",
     }
   )
 );
@@ -45,5 +64,4 @@ const AppNavigator = createAppContainer(
 export default {
   components: { AppNavigator },
 };
-
 </script>
