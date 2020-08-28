@@ -1,11 +1,6 @@
 // 新規会員登録画面
 <template>
   <nb-container :style="{ backgroundColor: '#fff' }">
-    <nb-header>
-      <nb-body>
-        <nb-title>新規会員登録</nb-title>
-      </nb-body>
-    </nb-header>
 
     <nb-content padder>
       <nb-form>

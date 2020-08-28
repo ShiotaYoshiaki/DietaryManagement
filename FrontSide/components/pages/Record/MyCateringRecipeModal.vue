@@ -39,7 +39,7 @@
     </view>
     <view class="last">
       <view class="add_menu">
-        <nb-button :on-press="addFunc">
+        <nb-button :onPress="() => this.props.navigation.goBack()">
           <text>献立に追加</text>
         </nb-button>
       </view>
