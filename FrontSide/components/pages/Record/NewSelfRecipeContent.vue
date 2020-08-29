@@ -6,7 +6,7 @@
         <nb-input placeholder="料理名" />
       </nb-item>
     </nb-form>
-    <view class="main">
+    <view class="main border">
       <view class="food_details">
         <nb-grid>
           <nb-row class="food_name">
@@ -57,15 +57,15 @@
             :style="{ width: 120 }"
             :selectedValue="selected"
             :onValueChange="onValueChange"
-            iosHeader	="一つお選びください"
+            iosHeader="選択して下さい"
             headerBackButtonText="戻る"
           >
-            <item label="茹でる" value="key0" />
-            <item label="揚げる" value="key1" />
-            <item label="焼く" value="key2" />
-            <item label="炒める" value="key3" />
-            <item label="煮る" value="key4" />
-            <item label="蒸す" value="key5" />
+            <item
+              v-for="cooking in cookings"
+              :key="cooking.message"
+              :label="cooking.message"
+              :value="cooking.key"
+            />
           </nb-picker>
         </nb-form>
       </nb-col>
@@ -87,6 +87,32 @@ export default {
         { message: "aaa2" },
         { message: "aaa3" },
         { message: "aaa4" },
+      ],
+      cookings: [
+        {
+          message: "茹でる",
+          key: "key0",
+        },
+        {
+          message: "揚げる",
+          key: "key1",
+        },
+        {
+          message: "焼く",
+          key: "key2",
+        },
+        {
+          message: "炒める",
+          key: "key3",
+        },
+        {
+          message: "煮る",
+          key: "key4",
+        },
+        {
+          message: "蒸す",
+          key: "key5",
+        },
       ],
       selected: "key1",
     };

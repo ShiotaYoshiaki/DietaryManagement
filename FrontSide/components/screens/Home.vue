@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     goToNewRecipe: function () {
-      this.navigation.navigate("NewSelfRecipe");
+      this.navigation.navigate("newSelfRecipe");
     },
   },
 };
