@@ -1,7 +1,7 @@
 {
-  "name": "Account",
+  "name": "Food",
   "port": 3100,
-  "route": "/api/account",
+  "route": "/api/food",
   "REGION": "ap-northeast-1",
   "DB_ENDPOINT": "dynamodb.ap-northeast-1.amazonaws.com",
   "ACCESS_KEY_ID": "anything",
