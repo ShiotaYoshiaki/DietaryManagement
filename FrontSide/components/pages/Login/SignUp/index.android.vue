@@ -177,7 +177,7 @@ export default {
   flex: 1.4;
 }
 
-.weightHei0ght {
+.weightHeight {
   flex: 1.5;
 }
 
