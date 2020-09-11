@@ -1,28 +1,47 @@
 <template>
   <view class="container">
     <text class="text-color-primary">メールアドレス</text>
-    <textInput type="text" v-model="emailadress" />
+    <textInput type="text" v-model="email" />
     <text class="text-color-primary">パスワード</text>
-    <textInput type="text" v-model="password" />
-    <nb-button class="login-button">
+    <textInput type="text" v-model="pass" />
+    <nb-button v-if="!ableToLogin" class="login-button" :onPress="login">
       <text>ログイン</text>
     </nb-button>
+    <text v-if="ableToLogin">ログイン成功</text>
   </view>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  data: function() {
+  data: () => {
     return {
-      emailadress: '入力',
-      password: '入力',
-    }
+      email: "test",
+      pass: "test",
+      ableToLogin: false,
+    };
+  },
+  methods: {
+    login() {
+      const url = `http://localhost:3100/api/account/login/${this.email}/${this.pass}`;
+      console.log(url);
+      axios
+        .get(url)
+        .then((response) => {
+          this.ableToLogin = response.data.conform;
+        })
+        .catch((error) => {
+          this.ableToLogin = "failed to access at dynamo db";
+        })
+        .finally(() => (this.loading = false));
+    },
   },
   styleObject: {
-    color: 'red',
-    fontSize: '13px'
-  }
-}
+    color: "red",
+    fontSize: "13px",
+  },
+};
 </script>
 
 <style>
