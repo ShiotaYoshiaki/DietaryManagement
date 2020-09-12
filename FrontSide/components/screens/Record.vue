@@ -21,12 +21,10 @@
 
     <nb-tabs>
       <nb-tab v-for="cook in cooked" :key="cook.key" :heading="cook.message">
-        <Table
-          @transition="(e) => this.props.navigation.navigate(e)"
-          :meal="cook.message"
-        />
+        <Table @transition="(e) => this.props.navigation.navigate(e)" :meal="cook.message" />
       </nb-tab>
     </nb-tabs>
+    <nb-text>{{message}}</nb-text>
   </nb-container>
 </template>
 
@@ -35,6 +33,7 @@ import Table from "../pages/Record/Table";
 import { MEALS } from "../../constants/meals";
 import React from "react";
 import moment from "moment";
+import store from "../../store/index"
 const now = new Date();
 
 export default {
@@ -59,6 +58,11 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    message() {
+      return store.state.message
+    }
   },
   methods: {
     screenTransition(e) {

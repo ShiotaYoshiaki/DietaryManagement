@@ -1,19 +1,13 @@
 <template>
   <nb-container :style="stylesObj.container">
     <nb-list>
-      <nb-card-item
-        v-for="recipe in recipes"
-        :key="recipe.key"
-        :style="stylesObj.recipeButtonList"
-      >
-        <nb-button
-          :onPress="() => screenTransition(recipe.key)"
-          :style="stylesObj.button"
-          bordered
-        >
-          <nb-text :style="stylesObj.recipeButtonMessage">{{
+      <nb-card-item v-for="recipe in recipes" :key="recipe.key" :style="stylesObj.recipeButtonList">
+        <nb-button :onPress="() => screenTransition(recipe.key)" :style="stylesObj.button" bordered>
+          <nb-text :style="stylesObj.recipeButtonMessage">
+            {{
             recipe.message
-          }}</nb-text>
+            }}
+          </nb-text>
         </nb-button>
       </nb-card-item>
     </nb-list>
@@ -21,18 +15,10 @@
       <nb-card-item>
         <nb-text>{{ meal }}の献立</nb-text>
       </nb-card-item>
-      <nb-list-item
-        class="c_recipe_history"
-        v-for="record in testRecord"
-        :key="record.key"
-      >
+      <nb-list-item class="c_recipe_history" v-for="record in EMPTY_RECIPE" :key="record.key">
         <text>{{ record.message }}</text>
       </nb-list-item>
-      <nb-button
-        :onPress="() => screenTransition(register.key)"
-        :style="stylesObj.button"
-        bordered
-      >
+      <nb-button :onPress="() => screenTransition(register.key)" :style="stylesObj.button" bordered>
         <nb-text>{{ register.message }}</nb-text>
       </nb-button>
     </nb-card>
@@ -41,20 +27,15 @@
 
 <script>
 import { MEALS } from "../../../constants/meals";
-import {
-  INPUT_RECIPE,
-  EMPTY_RECIPE,
-  MY_SELF_SET_REGISTER,
-} from "../../../constants/Records";
+import { INPUT_RECIPE, MY_SELF_SET_REGISTER } from "../../../constants/Records";
 import MyCateringRecipeModal from "./MyCateringRecipeModal";
 import MyCateringSetModal from "./MyCateringSetModal";
-
+import store from "../../../store/index";
 export default {
   data: () => {
     return {
       cooked: MEALS,
       recipes: INPUT_RECIPE,
-      testRecord: EMPTY_RECIPE,
       register: MY_SELF_SET_REGISTER,
       isModalActive: false,
       modalContent: "",
@@ -85,6 +66,11 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    EMPTY_RECIPE() {
+      return store.state.EMPTY_RECIPE;
+    },
   },
   props: {
     meal: {

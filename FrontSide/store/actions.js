@@ -1,5 +1,3 @@
-export default {
-  UpdateMessage({ commit }, number) {
-    commit("UpdateMessage", number);
-  },
-};
+export function PushMeals({ commit }) {
+  commit("PushMeals");
+}
