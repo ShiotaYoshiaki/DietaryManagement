@@ -2,7 +2,7 @@
   <view>
     <view class="top">
       <view class="serchbox">
-        <text-input v-model="keyword" :on-change="(e) => changeKeyword(e)" />
+        <text-input v-model="keyword" />
       </view>
       <view class="serch">
         <nb-button :on-press="searchFunc">
@@ -25,10 +25,7 @@
           <text>人前</text>
         </view>
         <view class="checkBox">
-          <nb-checkbox
-            :checked="cook.checked"
-            :on-press="() => (cook.checked = !cook.checked)"
-          ></nb-checkbox>
+          <nb-checkbox :checked="cook.checked" :on-press="() => (cook.checked = !cook.checked)"></nb-checkbox>
         </view>
         <view class="look_nutrition">
           <nb-button :on-press="look_nutritionFunc">
@@ -49,12 +46,11 @@
 
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
-import { MyRecipe } from "../../../constants/MyRecipe";
+import store from "../../../store/index";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      keyword: "",
-      cooks: MyRecipe,
       number: "0",
       check_box: "",
     };
@@ -66,44 +62,40 @@ export default {
     open_func: {
       type: Function,
     },
-    testRecord: {
-      type: Array,
+  },
+  computed: {
+    AddRecipe() {
+      return store.state.EMPTY_RECIPE;
+    },
+    cooks() {
+      return store.state.MyRecipe;
+    },
+    keyword: {
+      get() {
+        return store.state.keyword;
+      },
+      set(value) {
+        return store.dispatch("UpdateKeyword", value);
+      },
     },
   },
   methods: {
-    changeKeyword(e) {
-      this.keyword = e.nativeEvent.text;
+    ...mapActions(["searchFunc","changeSort","sortedCooks","addFunc"]),
+    searchFunc(){
+      return store.dispatch("searchFunc");
     },
-    searchFunc() {
-      const searched = this.cooks.filter((value) => {
-        const indexNum = value.message.indexOf(this.keyword);
-        return indexNum !== -1;
-      });
-      this.cooks = searched;
+    changeSort(){
+      return store.dispatch("changeSort");
     },
-    changeSort() {
-      const sorted = this.cooks.map((cook) => {
-        return cook.message;
-      });
-      sorted.sort();
-      const sortedCooks = sorted.map(param => {
-        this.cooks.find(cook =>  cook.message === param)
-      });
-        this.cooks = sortedCooks;
+    sortedCooks(){
+      return store.dispatch("sortedCooks");
     },
-    addFunc() {
-      const boolemAdd = this.cooks.filter((value) => {
-        const filterValue = value.checked;
-        return filterValue;
-      });
-      boolemAdd.forEach((element) => {
-        this.testRecord.push(element);
-      });
-      this.open_func();
+    addFunc(){
+      return store.dispatch("addFunc");
     },
     look_nutritionFunc() {
       console.log("ここを押すと栄養素一覧は飛びます");
-    }
+    },
   },
 };
 </script>

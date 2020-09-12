@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    message: "hh",
+    keyword: "",
     EMPTY_RECIPE: [
       {
         key: "i_1",
@@ -33,6 +33,33 @@ const store = new Vuex.Store({
         key: "i_5",
         message: "test5",
         bool: true,
+      },
+    ],
+    MyRecipe: [
+      {
+        key: 1,
+        message: "野菜炒め",
+        checked: true,
+      },
+      {
+        key: 2,
+        message: "カレーライス",
+        checked: true,
+      },
+      {
+        key: 3,
+        message: "焼きそば",
+        checked: true,
+      },
+      {
+        key: 4,
+        message: "チャーハン",
+        checked: true,
+      },
+      {
+        key: 5,
+        message: "麻婆豆腐",
+        checked: true,
       },
     ],
   },

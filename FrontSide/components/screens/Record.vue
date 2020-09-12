@@ -24,7 +24,6 @@
         <Table @transition="(e) => this.props.navigation.navigate(e)" :meal="cook.message" />
       </nb-tab>
     </nb-tabs>
-    <nb-text>{{message}}</nb-text>
   </nb-container>
 </template>
 
@@ -58,11 +57,6 @@ export default {
         },
       },
     };
-  },
-  computed: {
-    message() {
-      return store.state.message
-    }
   },
   methods: {
     screenTransition(e) {
