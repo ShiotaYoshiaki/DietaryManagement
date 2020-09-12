@@ -11,11 +11,12 @@ async function getTargetUser(name) {
     const repository = new UserInfo();
     const result = await repository.findByName(name);
     if (isEmptyObject(result)) {
+      console.warn(`Failed to get user name. name: ${name}`);
       throw new Error(`No exist user. name: ${name}`);
     }
     return result;
   } catch (e) {
-    console.log("Error at getTargetUser");
+    console.error("Error at getTargetUser");
     throw e;
   }
 }
