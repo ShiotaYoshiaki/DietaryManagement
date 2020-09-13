@@ -36,7 +36,7 @@
     </view>
     <view class="last">
       <view class="add_menu">
-        <nb-button :onPress="addFunc">
+        <nb-button :onPress="doubleFunc">
           <text>献立に追加</text>
         </nb-button>
       </view>
@@ -58,8 +58,8 @@ export default {
     MaterialIcons,
   },
   props: {
-    open_func: {
-      type: Function,
+    navigation: {
+      type: Object,
     },
   },
   computed: {
@@ -79,20 +79,27 @@ export default {
     },
   },
   methods: {
-    searchFunc(){
+    searchFunc() {
       return store.dispatch("searchFunc");
     },
-    changeSort(){
+    changeSort() {
       return store.dispatch("changeSort");
     },
-    sortedCooks(){
+    sortedCooks() {
       return store.dispatch("sortedCooks");
     },
-    addFunc(){
+    addFunc() {
       return store.dispatch("addFunc");
     },
     look_nutritionFunc() {
       console.log("ここを押すと栄養素一覧は飛びます");
+    },
+    goToRecord() {
+      this.navigation.navigate("Record");
+    },
+    doubleFunc() {
+      this.addFunc();
+      this.goToRecord();
     },
   },
 };

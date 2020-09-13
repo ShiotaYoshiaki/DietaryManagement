@@ -1,7 +1,7 @@
 <template>
   <view>
     <nb-text>マイ自炊レシピです</nb-text>
-    <MyCateringRecipeModal :open_func="open_func" :testRecord="testRecord" />
+    <MyCateringRecipeModal :navigation="navigation"/>
   </view>
 </template>
 <script>
@@ -11,12 +11,9 @@ export default {
     MyCateringRecipeModal,
   },
   props: {
-    open_func: {
-      type: Function,
-    },
-    testRecord: {
-      type: Array,
-    },
+    navigation: {
+      type: Object
+    }
   },
 };
 </script>
