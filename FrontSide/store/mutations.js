@@ -2,28 +2,28 @@ export function UpdateKeyword(state, newKeyword) {
   state.keyword = newKeyword;
 }
 export function searchFunc(status) {
-  const searched = status.cooks.filter((value) => {
+  const searched = status.MyRecipe.filter((value) => {
     const indexNum = value.message.indexOf(status.keyword);
     return indexNum !== -1;
   });
-  status.cooks = searched;
+  status.MyRecipe = searched;
 }
 export function changeSort(status) {
-  const sorted = status.cooks.map((cook) => {
-    return cook.message;
+  const sorted = status.MyRecipe.map((value) => {
+    // console.log(value.message);
+    return value.message;
   });
   sorted.sort();
-  const sortedCooks = sorted.map(param => {
-    status.cooks.find(cook =>  cook.message === param)
+  const sortedMyRecipe = sorted.map((data) => {
+    return status.MyRecipe.find((recipe) => recipe.message === data);
   });
-    status.cooks = sortedCooks;
 }
 export function addFunc(status) {
-  const boolemAdd = status.cooks.filter((value) => {
+  const boolemAdd = status.MyRecipe.filter((value) => {
     const filterValue = value.checked;
     return filterValue;
   });
   boolemAdd.forEach((element) => {
-    this.AddRecipe.push(element);
+    status.EMPTY_RECIPE.push(element);
   });
 }

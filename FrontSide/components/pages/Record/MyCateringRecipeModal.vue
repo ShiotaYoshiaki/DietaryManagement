@@ -16,7 +16,7 @@
       </view>
     </view>
     <view class="main">
-      <view class="list" v-for="cook in cooks" :key="cook.key">
+      <view class="list" v-for="cook in cooks" :key="cook.message">
         <view class="my_list">
           <text>{{ cook.message }}</text>
         </view>
@@ -36,7 +36,7 @@
     </view>
     <view class="last">
       <view class="add_menu">
-        <nb-button :onPress="() => this.props.navigation.goBack()">
+        <nb-button :onPress="addFunc">
           <text>献立に追加</text>
         </nb-button>
       </view>
@@ -47,7 +47,6 @@
 <script>
 import { MaterialIcons } from "@expo/vector-icons";
 import store from "../../../store/index";
-import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -80,7 +79,6 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["searchFunc","changeSort","sortedCooks","addFunc"]),
     searchFunc(){
       return store.dispatch("searchFunc");
     },
